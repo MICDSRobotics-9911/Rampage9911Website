@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 .flex {
         display: flex;
         justify-content: center;
@@ -9,18 +11,30 @@
         flex-direction: column;
 }
 
+.centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        /* bring your own prefixes */
+        transform: translate(-50%, -50%);
+        
+        transition: visibility 0s, opacity 0.5s linear;
+}
+
 button {
-        background-color: darkgrey;
-        border-color: white;
+        background-color: #38393a;
         color: white;
         
-        border: 3px solid white;
+        border: 3px solid #38393a;
         border-radius: 5px;
         
         height: 25px;
         width: 75px;
+        
+        font-size: 15px;
 }
 
-h1, h2, p, em {
+h1, h2, p, em, a {
         color: white;
+        font-family: 'Open Sans', sans-serif;
 }
