@@ -1,0 +1,26 @@
+.flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+}
+
+.vertical {
+        flex-direction: column;
+}
+
+button {
+        background-color: darkgrey;
+        border-color: white;
+        color: white;
+        
+        border: 3px solid white;
+        border-radius: 5px;
+        
+        height: 25px;
+        width: 75px;
+}
+
+h1, h2, p, em {
+        color: white;
+}
