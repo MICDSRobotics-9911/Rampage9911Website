@@ -5,11 +5,26 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { RobotComponent } from './components/robot/robot.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 const appRoutes: Routes = [
         {
                 path: 'home',
                 component: HomeComponent
+        },
+        {
+                path: 'robot',
+                component: RobotComponent
+        },
+        {
+                path: 'about-us',
+                component: AboutComponent
+        },
+        {
+                path: 'contact',
+                component: ContactComponent
         },
         {
                 path: '',
@@ -26,7 +41,10 @@ const appRoutes: Routes = [
         declarations: [
                 AppComponent,
                 HomeComponent,
-                NotfoundComponent
+                NotfoundComponent,
+                RobotComponent,
+                AboutComponent,
+                ContactComponent
         ],
         imports: [
                 BrowserModule,
