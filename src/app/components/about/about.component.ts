@@ -10,33 +10,93 @@ export class AboutComponent implements OnInit {
                 "people": [
                         {
                                 "name":"Kendall",
-                                "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque sagittis est nec vehicula. Integer porttitor vestibulum orci, vel fermentum ligula luctus non. Proin a suscipit nisl. Pellentesque malesuada nec ipsum vel consectetur. Donec a gravida turpis. Fusce sagittis molestie mauris, ut porta turpis imperdiet sit amet. Curabitur arcu ligula, scelerisque sit amet facilisis id, vehicula sed turpis. Sed faucibus odio a convallis porttitor. Curabitur ut odio consectetur ligula vulputate facilisis. Praesent volutpat pellentesque purus at lobortis. Suspendisse quis enim a libero condimentum consequat. Donec consequat magna nec tellus venenatis sollicitudin. Proin dui justo, mollis sed sodales eget, laoreet sed nisl. Curabitur vehicula est ac eros condimentum pellentesque.",
+                                "bio":"Team Captain",
                                 "imgpath":"../../../assets/team/kendall.jpg"
                         },
                         {
                                 "name":"Megan",
-                                "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque sagittis est nec vehicula. Integer porttitor vestibulum orci, vel fermentum ligula luctus non. Proin a suscipit nisl. Pellentesque malesuada nec ipsum vel consectetur. Donec a gravida turpis. Fusce sagittis molestie mauris, ut porta turpis imperdiet sit amet. Curabitur arcu ligula, scelerisque sit amet facilisis id, vehicula sed turpis. Sed faucibus odio a convallis porttitor. Curabitur ut odio consectetur ligula vulputate facilisis. Praesent volutpat pellentesque purus at lobortis. Suspendisse quis enim a libero condimentum consequat. Donec consequat magna nec tellus venenatis sollicitudin. Proin dui justo, mollis sed sodales eget, laoreet sed nisl. Curabitur vehicula est ac eros condimentum pellentesque.",
+                                "bio":"Outreach Captain",
                                 "imgpath":"../../../assets/team/megan.jpg"
                         },
                         {
                                 "name":"Blake",
-                                "bio":"he also a G",
+                                "bio":"Programming Captain",
                                 "imgpath":'../../../assets/team/blake.jpg'
                         },
                         {
-                                "name":"Josh",
-                                "bio":"he also a G",
-                                "imgpath":'../../../assets/team/josh.jpg'
+                                "name":"Clayton",
+                                "bio":"Construction Captain",
+                                "imgpath":'../../../assets/team/clayton.jpg'
                         },
                         {
-                                "name":"Josh",
-                                "bio":"he also a G",
-                                "imgpath":'../../../assets/team/josh.jpg'
+                                "name":"Ehan",
+                                "bio":"3D Printing Captain",
+                                "imgpath":'../../../assets/team/ehan.jpg'
                         },
                         {
-                                "name":"Josh",
-                                "bio":"he also a G",
-                                "imgpath":'../../../assets/team/josh.jpg'
+                                "name":"Amir",
+                                "bio":"3D Printing Co-Captain",
+                                "imgpath":'../../../assets/team/amir.jpg'
+                        },
+                        {
+                                "name":"Joshua",
+                                "bio":"Programming",
+                                "imgpath":"../../../assets/team/josh.jpg"
+                        },
+                        {
+                                "name":"Niema",
+                                "bio":"Programming",
+                                "imgpath":"../../../assets/team/niema.jpg"
+                        },
+                        {
+                                "name":"Will",
+                                "bio":"Construction",
+                                "imgpath":"../../../assets/team/will.jpg"
+                        },
+                        {
+                                "name":"Justin",
+                                "bio":"3D Printing",
+                                "imgpath":"../../../assets/team/justin.jpg"
+                        },
+                        {
+                                "name":"Jude",
+                                "bio":"Programming",
+                                "imgpath":"../../../assets/team/jude.jpg"
+                        },
+                        {
+                                "name":"Julian",
+                                "bio":"Construction",
+                                "imgpath":"../../../assets/team/julian.jpg"
+                        },
+                        {
+                                "name":"Parker",
+                                "bio":"Outreach",
+                                "imgpath":"../../../assets/team/parker.jpg"
+                        },
+                        {
+                                "name":"Ethan",
+                                "bio":"Construction",
+                                "imgpath":"../../../assets/team/ethan.jpg"
+                        },
+                        {
+                                "name":"Alex",
+                                "bio":"Programming",
+                                "imgpath":"../../../assets/team/alex.jpg"
+                        },
+                        {
+                                "name":"Kyle",
+                                "bio":"Construction",
+                                "imgpath":"../../../assets/team/kyle.jpg"
+                        },
+                        {
+                                "name":"Meade Summers",
+                                "bio":"3D Printing",
+                                "imgpath":"../../../assets/team/meade.jpg"
+                        },
+                        {
+                                "name":"Matt",
+                                "bio":"Construction",
+                                "imgpath":"../../../assets/team/matt.jpg"
                         },
                         {
                                 "name":"placeholder",
@@ -70,7 +130,7 @@ export class AboutComponent implements OnInit {
                 
                 var container = document.createElement("DIV");  
                 var margin = document.createAttribute("style");
-                margin.value = "margin-right: 25px; margin-bottom: 25px; display: flex; justify-content: center; align-items: center; flex-direction: column; color:white; font-family: 'Open Sans', sans-serif; width: 350px;";
+                margin.value = "margin-right: 25px; margin-bottom: 25px; display: flex; justify-content: center; align-items: center; flex-direction: column; color:white; font-size: 18px; font-family: 'Open Sans', sans-serif; width: 250px; height: 350px;";
                 container.setAttributeNode(margin);
                 
                 // create an image

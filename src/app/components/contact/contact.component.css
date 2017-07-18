@@ -1,1 +1,15 @@
 @import '../../../style/master.css';
+
+.hidden {
+        visibility: hidden;
+}
+
+div {
+        background-color: darkgrey;
+        margin-top: 15px;
+        padding-bottom: 25px;
+}
+
+h1, p {
+        color: white;
+}

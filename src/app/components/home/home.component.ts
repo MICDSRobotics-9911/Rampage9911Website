@@ -6,15 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-        shown = "hidden";
 
         constructor() { }
 
         ngOnInit() {
-                /*setTimeout(e => {
-                        this.shown = "visible"
-                }, 500);*/
                 
-                this.shown = "visible";
         }
 }
