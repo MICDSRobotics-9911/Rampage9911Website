@@ -12,3 +12,11 @@ em {
         margin: 0px 20px 0px 20px;
         letter-spacing: 1px;
 }
+
+div {
+        -webkit-animation: fadein 1s;
+}
+
+h1, p {
+        -webkit-animation: fadein 2s;
+}
