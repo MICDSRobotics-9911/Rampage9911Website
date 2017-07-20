@@ -97,11 +97,6 @@ export class AboutComponent implements OnInit {
                                 "name":"Matt",
                                 "bio":"Construction",
                                 "imgpath":"../../../assets/team/matt.jpg"
-                        },
-                        {
-                                "name":"placeholder",
-                                "bio":"don't remove",
-                                "imgpath":'just dont'
                         }
                 ]
         };
@@ -110,6 +105,20 @@ export class AboutComponent implements OnInit {
 
         ngOnInit() {
                 let carry = 0;
+                let iterations = 2;
+                
+                var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+                
+                if (w < 854 && w > 568) {
+                        iterations = 1;
+                }
+                if (w < 567) {
+                        iterations = 0;
+                }
+                if (w > 1120) {
+                        iterations = 3;
+                }
+                
                       
                 for (var person = 0; person < this.imgConfig.people.length; person++) {
                         var rowContainer = document.createElement("DIV");
@@ -117,7 +126,8 @@ export class AboutComponent implements OnInit {
                         style.value = "display: flex; justify-content: center; align-items: center; flex-direction: row";
                         rowContainer.setAttributeNode(style);
                         
-                        for (var i = 0; i <= 2; i++) {
+                        for (var i = 0; i < iterations + 1; i++) {
+                                //           ^ was 2 originally
                                 rowContainer.appendChild(this.generateImageLine(person + i));
                                 carry = (person + i);
                         }
