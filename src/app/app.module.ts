@@ -36,11 +36,11 @@ const appRoutes: Routes = [
                 path: '',
                 redirectTo: '/home',
                 pathMatch: 'full'
-        },
+        }/*,
         {
                 path: '**',
                 component: NotfoundComponent
-        }
+        }*/
 ]
 
 @NgModule({
