@@ -8,6 +8,8 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { RobotComponent } from './components/robot/robot.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { ProgrammingComponent } from './components/programming/programming.component';
+import { WikiComponent } from './components/wiki/wiki.component';
 
 const appRoutes: Routes = [
         {
@@ -21,6 +23,10 @@ const appRoutes: Routes = [
         {
                 path: 'about-us',
                 component: AboutComponent
+        },
+        {
+                path: 'programming',
+                component: ProgrammingComponent
         },
         {
                 path: 'contact',
@@ -44,7 +50,9 @@ const appRoutes: Routes = [
                 NotfoundComponent,
                 RobotComponent,
                 AboutComponent,
-                ContactComponent
+                ContactComponent,
+                ProgrammingComponent,
+                WikiComponent
         ],
         imports: [
                 BrowserModule,
