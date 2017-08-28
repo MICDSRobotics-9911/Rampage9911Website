@@ -1,1 +1,5 @@
 @import '../../../style/master.css';
+
+a {
+        margin-top: 1em;
+}
