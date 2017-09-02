@@ -3,3 +3,22 @@
 a {
         margin-top: 1em;
 }
+
+#linkcontainer {
+          margin-top: 2em;
+}
+
+.abstractpicture {
+          width: 75px;
+          height: 75px;
+}
+
+.imglink {
+          background-color: grey;
+          opacity: 0.9;
+          width: 16em;
+          height: 150px;
+          padding: 5px 5px 5px 5px;
+          border: 5px dashed lightgrey;
+          margin-right: 7px;
+}

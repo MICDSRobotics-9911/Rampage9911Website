@@ -24,11 +24,6 @@ export class AboutComponent implements OnInit {
                                 "imgpath":'../../../assets/team/blake.jpg'
                         },
                         {
-                                "name":"Clayton",
-                                "bio":"Construction Captain",
-                                "imgpath":'../../../assets/team/clayton.jpg'
-                        },
-                        {
                                 "name":"Ehan",
                                 "bio":"3D Printing Captain",
                                 "imgpath":'../../../assets/team/ehan.jpg'
@@ -39,44 +34,19 @@ export class AboutComponent implements OnInit {
                                 "imgpath":'../../../assets/team/amir.jpg'
                         },
                         {
-                                "name":"Joshua",
-                                "bio":"Programming",
-                                "imgpath":"../../../assets/team/josh.jpg"
-                        },
-                        {
-                                "name":"Niema",
-                                "bio":"Programming",
-                                "imgpath":"../../../assets/team/niema.jpg"
-                        },
-                        {
                                 "name":"Will",
                                 "bio":"Construction",
                                 "imgpath":"../../../assets/team/will.jpg"
                         },
                         {
-                                "name":"Justin",
-                                "bio":"3D Printing",
-                                "imgpath":"../../../assets/team/justin.jpg"
-                        },
-                        {
                                 "name":"Jude",
-                                "bio":"Programming",
+                                "bio":"3D Modeling",
                                 "imgpath":"../../../assets/team/jude.jpg"
                         },
                         {
                                 "name":"Julian",
                                 "bio":"Construction",
                                 "imgpath":"../../../assets/team/julian.jpg"
-                        },
-                        {
-                                "name":"Parker",
-                                "bio":"Outreach",
-                                "imgpath":"../../../assets/team/parker.jpg"
-                        },
-                        {
-                                "name":"Ethan",
-                                "bio":"Construction",
-                                "imgpath":"../../../assets/team/ethan.jpg"
                         },
                         {
                                 "name":"Alex",
@@ -92,11 +62,6 @@ export class AboutComponent implements OnInit {
                                 "name":"Meade Summers",
                                 "bio":"3D Printing",
                                 "imgpath":"../../../assets/team/meade.jpg"
-                        },
-                        {
-                                "name":"Matt",
-                                "bio":"Construction",
-                                "imgpath":"../../../assets/team/matt.jpg"
                         }
                 ]
         };
@@ -107,7 +72,7 @@ export class AboutComponent implements OnInit {
                 let carry = 0;
                 let iterations = 2;
                 
-                var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+                /*var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
                 
                 if (w < 854 && w > 568) {
                         iterations = 1;
@@ -117,16 +82,16 @@ export class AboutComponent implements OnInit {
                 }
                 if (w > 1120) {
                         iterations = 3;
-                }
+              }*/
                 
                       
-                for (var person = 0; person < this.imgConfig.people.length; person++) {
+                for (var person = 0; person <= this.imgConfig.people.length; person++) {
                         var rowContainer = document.createElement("DIV");
                         var style = document.createAttribute("style");
                         style.value = "display: flex; justify-content: center; align-items: center; flex-direction: row";
                         rowContainer.setAttributeNode(style);
                         
-                        for (var i = 0; i < iterations + 1; i++) {
+                        for (var i = 0; i < iterations; i++) {
                                 //           ^ was 2 originally
                                 rowContainer.appendChild(this.generateImageLine(person + i));
                                 carry = (person + i);
