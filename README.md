@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/MICDSRobotics/Technomaric5190Website.svg?branch=master)](https://travis-ci.org/MICDSRobotics/Technomaric5190Website)
 # Technoramic5190
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.1.
