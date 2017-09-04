@@ -8,4 +8,7 @@ before_script:
  - npm install -g @angular/cli
  - npm install
  
+notifications:
+   slack: technoramic5190:CvjEwxk2fhRNe87HgNn4j4zN
+
 script: ng build
