@@ -4,5 +4,8 @@
         <p class="hidden"></p>
         <p>101 North Warson Rd. St. Louis, MO 63131</p>
         <p class="hidden"></p>
-        <a href="mailto:kework@micds.org">Email Kendall Work</a>
+        <h1>Email Kendall Work</h1>
+        <input placeholder="Subject Here" #subject />
+        <textarea placeholder="Your message here (html is supported)" #body></textarea>
+        <button (click)="submit($event, subject.value, body.value)">Submit</button>
 </div>
