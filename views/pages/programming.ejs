@@ -1,0 +1,52 @@
+<head>
+<% include ../partials/header %>
+
+<style>
+.a {
+        margin-top: 1em;
+}
+
+#linkcontainer {
+          margin-top: 2em;
+}
+
+.abstractpicture {
+          width: 75px;
+          height: 75px;
+}
+
+.imglink {
+          background-color: grey;
+          opacity: 0.9;
+          width: 16em;
+          height: 150px;
+          padding: 5px 5px 5px 5px;
+          border: 5px dashed lightgrey;
+          margin-right: 7px;
+}
+</style>
+</head>
+<div class="flex vertical">
+      <h1>Programming Home</h1>
+      
+      <div class="flex vertical">
+              <div class="flex vertical">
+                    <p>Our Current Project Status</p><a class="a" href="https://travis-ci.org/MICDSRobotics/RelicRecovery"><img id="travisLink" src="https://travis-ci.org/MICDSRobotics/RelicRecovery.svg?branch=master" alt="Build Status"></a>
+              </div>
+              
+              <div class="flex" id="linkcontainer">
+                        <div class="imglink flex vertical">
+                                 <a class="a" href="/wiki.html"><img class="abstractpicture" src="/linkabstracts/markdown.png"></a>
+                                 <p>Our programming tutorials</p>
+                       </div>
+                       <div class="imglink flex vertical">
+                                 <a class="a" href="/docs/"><img class="abstractpicture" src="/linkabstracts/javadoc.png"></a>
+                                 <p>Our robot code documentation</p>
+                       </div>
+                       <div class="imglink flex vertical">
+                                 <a class="a" href="/docs/robotplus"><img class="abstractpicture" src="/linkabstracts/javadoc.png"></a>
+                                 <p>Our robot library documentation</p>
+                       </div>
+              </div>
+      </div>
+</div>

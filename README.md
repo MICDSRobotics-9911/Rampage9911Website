@@ -1,29 +1,39 @@
-[![Build Status](https://travis-ci.org/MICDSRobotics/Technomaric5190Website.svg?branch=master)](https://travis-ci.org/MICDSRobotics/Technomaric5190Website)
-# Technoramic5190
+# Technomaric5190Website
+This is the official website project for Technoramic
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.1.
+# Prerequisites
+- You must have [the latest version of node.js](https://nodejs.org/en/)
 
-## Development server
+# Setting up and Running the Server
+First we must setup the server in order for it to run. First, open up a command window and navigate it to the repository. Then run
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+npm install -D
+```
 
-## Code scaffolding
+then run to start it
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+```
+node index.js
+```
 
-## Build
+The server should start with the message of `Server started`. If it doesn't try these things
+- delete the node_modules folder
+- then do `npm install -D`
+- check you node.js installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+# Using Nodemon
+To auto-run the server on saving, you may want to use nodemon. To set up, run
 
-## Running unit tests
+```
+npm install -g nodemon
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+to run the server, run
 
-## Running end-to-end tests
+```
+nodemon index.js
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Information
+The backend server is written in node.js (the index.js). The files in the views folder contains the `.ejs` files that are the actual pages

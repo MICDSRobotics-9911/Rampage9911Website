@@ -1,14 +1,9 @@
-sudo: required
-dist: trusty
 language: node_js
 node_js:
- - '6.11'
+ - "iojs"
+ - "7"
  
 before_script:
- - npm install -g @angular/cli
- - npm install
+ - npm install -D
  
-notifications:
-   slack: technoramic5190:CvjEwxk2fhRNe87HgNn4j4zN
-
-script: ng build
+script: node index.js

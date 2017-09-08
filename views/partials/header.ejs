@@ -1,12 +1,58 @@
+<head>
+<link rel="stylesheet" href="/master.css" type="text/css">
+
+<style>
+.nav {
+        background-color: #38393a;
+        padding: 15px 0px 15px 0px;
+}
+
+.contacts {
+        position: relative;
+        
+        background-color: grey;
+        
+        width: 175px;
+        
+        padding: 15px 0px 15px 0px;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+}
+
+a {
+        font-size: 18px;
+}
+
+a {
+        padding-right: 7px;
+        padding-left: 7px;
+}
+
+.home {
+	font-size: 2.2em;
+	font-weight: bold;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+</style>
+
+<title>Technoramic5190</title>
+<link rel="icon" type="image/x-icon" href="/icon.ico">
+
+</head>
+
 <div class="flex vertical nav">
-        <h1 routerLink="/home">Robotics Team Technoramic 5190</h1>
+        <a class="home" href="/">Robotics Team Technoramic 5190</a>
         
         <!-- <img src="../../assets/ram.png" width="65px" height="50px"> -->
         <div class="flex nav">
-                <button routerLink="/about-us" routerLinkActive="active">About</button>
-                <button routerLink="/robot" routerLinkActive="active">Robot</button>
-                <button routerLink="/contact" routerLinkActive="active">Contact</button>
-                <button routerLink="/programming" routerLinkActive="active">Programming</button>
+                <a href="/about">About</a>
+                <a href="/robot">Robot</a>
+                <a href="/contact">Contact</a>
+                <a href="/programming">Programming</a>
         </div>
 </div>
 
@@ -22,5 +68,3 @@
         <a href="http://www.facebook.com/Technoramic-5190-1157022120987198" target="_self" data-content="http://www.facebook.com/Technoramic-5190-1157022120987198" data-type="external" id="comp-iv2wbcul2imagelink" class="lb1imageItemlink" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_FOOTER.$centeredContent.$inlineContent.$comp-iv2wbcul.$itemsContainer.2.$link"><div id="comp-iv2wbcul2imageimage" class="lb1imageItemimage" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_FOOTER.$centeredContent.$inlineContent.$comp-iv2wbcul.$itemsContainer.2.$link.0"><div class="lb1imageItemimagepreloader" id="comp-iv2wbcul2imageimagepreloader" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_FOOTER.$centeredContent.$inlineContent.$comp-iv2wbcul.$itemsContainer.2.$link.0.$preloader">
         </div><img id="comp-iv2wbcul2imageimageimage" alt="Facebook - White Circle" data-type="image" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_FOOTER.$centeredContent.$inlineContent.$comp-iv2wbcul.$itemsContainer.2.$link.0.$image" src="https://static.wixstatic.com/media/e0678ef25486466ba65ef6ad47b559e1.png/v1/fill/w_40,h_40,al_c,usm_0.66_1.00_0.01/e0678ef25486466ba65ef6ad47b559e1.png" style="width: 40px; height: 40px; object-fit: cover;"></div></a>
 </div>
-
-<router-outlet></router-outlet>
