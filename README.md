@@ -16,6 +16,8 @@ then run to start it
 ```
 node index.js
 ```
+Now open your web browser and go to `http://localhost:1200`
+
 
 The server should start with the message of `Server started`. If it doesn't try these things
 - delete the node_modules folder
