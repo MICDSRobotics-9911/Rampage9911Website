@@ -17,7 +17,7 @@ h1, p {
 }
 
 input {
-	border: 2px solid darkgrey;
+	border: 2px solid darkred;
 	border-radius: 5px;
 	background-color: white;
 	color: grey;
@@ -30,7 +30,7 @@ input {
 }
 
 textarea {
-	border: 2px solid darkgrey;
+	border: 2px solid darkred;
 	border-radius: 5px;
 	background-color: white;
 	color: grey;
@@ -53,9 +53,9 @@ textarea {
 </head>
 <div class="flex vertical div">
         <h1>Contact Us</h1>
-        <p>Kendall Work, Megan Currie, Blake Abel, Clayton Pope, Ehan Kamat, and Amir Shinawi</p>
+        <p>You probably want to contact either Kendall Work, Megan Currie, Blake Abel, Ehan Kamat, or Amir Shinawi.</p>
         <p class="hidden"></p>
-        <p>101 North Warson Rd. St. Louis, MO 63131</p>
+        <p>MICDS Contact Info: 101 North Warson Rd. St. Louis, MO 63131</p>
         <p class="hidden"></p>
         <h1>Email Kendall Work</h1>
         <input placeholder="Subject Here" id="subject" />
@@ -73,7 +73,7 @@ function sendContact(to, subject, html) {
 	var http = new XMLHttpRequest();
 	http.onreadystatechange = function() {
 		if (this.readyState == 4) {
-			alert("Emal sent!");
+			alert("Email sent!");
 		}
 	};
 	http.open("GET", formatURL(url, 'kework@micds.org', document.getElementById("subject").value, document.getElementById("html").value), true);
