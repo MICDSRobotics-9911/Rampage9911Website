@@ -95,10 +95,16 @@ var imgConfig = {
                                 "imgpath":"/team/kyle.jpg"
                         },
                         {
-                                "name":"Meade Summers",
+                                "name":"Meade",
                                 "bio":"3D Printing",
                                 "imgpath":"/team/meade.jpg"
+                        },
+                        {
+                                "name":"Benjamin",
+                                "bio":"none",
+                                "imgpath":"/team/benja.jpg"
                         }
+			
                 ]
         };
 
@@ -130,9 +136,10 @@ function generateImageLine(i) {
         profile.setAttributeNode(src);
         profile.setAttributeNode(style);
         // end create an image
-                
+        if (this.imgConfig.people[i].bio=='none') {var name = document.createTextNode(this.imgConfig.people[i].name);
+} else {
         var name = document.createTextNode(this.imgConfig.people[i].name + ": " + this.imgConfig.people[i].bio);
-                
+}                
         container.appendChild(profile);
         container.appendChild(name);
                 
