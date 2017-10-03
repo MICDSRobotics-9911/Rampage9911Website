@@ -1,4 +1,4 @@
-# Technomaric5190Website
+# Technomaric5190Website [![Build Status](https://travis-ci.org/MICDSRobotics/Technomaric5190Website.svg?branch=master)](https://travis-ci.org/MICDSRobotics/Technomaric5190Website)
 This is the official website project for Technoramic
 
 # Prerequisites
