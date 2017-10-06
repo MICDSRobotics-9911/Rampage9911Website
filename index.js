@@ -42,7 +42,7 @@ MongoClient.connect(url, function (err, db) {
 	console.log(todayID);
 	
 	if (require(__dirname + '/config.json').production) {
-		db.collection('timelogs').insert({_id: todayID, 'test': 'hello'}, (err) => {
+		db.collection('timelogs').insert({_id: todayID, 'date': new Date(), 'logs': []}, (err) => {
 			if (err) {
 				throw err;
 			}
