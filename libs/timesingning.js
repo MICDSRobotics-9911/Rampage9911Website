@@ -23,22 +23,25 @@ module.exports = (app, db, date) => {
                                
                                db.collection('timelogs').update({_id: date}, {logs: temp});
                                
-                               res.end('done');  
+                               res.json({
+                                       error: null
+                               })  
                        })
                        .catch(() => {
-                               res.end('name not valid');
+                               res.json({
+                                       error: "name provided not in database"
+                               })
                        })
                })
         });
         
         app.post('/signout', (req, res) => {
-                // TODO: find the name in the db, update the signout
+                // find the name in the db, update the signout
                 //res.end('hello from signout');
                 
                 // get the correct date
                 db.collection('timelogs').findOne({_id: date}, function (err, doc) {
                         for (var i = 0; i < doc.logs.length; i++) {
-                                console.log(doc.logs[i].name);
                                 if (doc.logs[i].name.includes(req.body.name)) {
                                         var temp = doc.logs;
                                         temp[i].signout = new Date();
@@ -49,12 +52,19 @@ module.exports = (app, db, date) => {
                                         db.collection('timelogs').update({_id: date}, {logs: temp});
                                         break;
                                 }
-                                else {
-                                        console.log('fail');
-                                }
                         }
-                        console.log(doc);
-                        res.end('done');
+                        res.json({
+                                error: null
+                        })
                 })
         });
+        
+        app.get('/timelogs', (req, res) => {
+                db.collection('timelogs').find({}).toArray(function (err, results) {                        
+                        res.json({
+                                error: null,
+                                all: results
+                        })        
+                })
+        })
 }
