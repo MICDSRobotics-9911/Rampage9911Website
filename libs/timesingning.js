@@ -59,6 +59,13 @@ module.exports = (app, db, date) => {
                 })
         });
         
+        app.post('/newmember', (req, res) => {
+                db.collection('users').insertOne({name: req.body.member});
+                res.json({
+                        error: null
+                })
+        });
+        
         app.get('/timelogs', (req, res) => {
                 db.collection('timelogs').find({}).toArray(function (err, results) {                        
                         res.json({
@@ -66,5 +73,5 @@ module.exports = (app, db, date) => {
                                 all: results
                         })        
                 })
-        })
+        });
 }
