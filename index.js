@@ -1,44 +1,31 @@
 var express = require('express');
 var app = express();
 
-// databse stuff
-var MongoClient = require('mongodb').MongoClient,
-	assert = require('assert');
+// database
+var MongoClient = require('mongodb').MongoClient;
 
-var url = require(__dirname + '/config.json').mongoURI;
+//var url = require(__dirname + '/config.json').mongoURI;
 var bodyParser = require('body-parser');
 var hashGen = require('hash-generator');
 //var jsonParser = bodyParser.json();
 
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : false }));
 
-app.get('/', function (req, res) {
-	res.render('pages/index');
-})
+// 'front-end' routing
+require(__dirname + '/routing.js')(app);
 
-app.get('/about', function (req, res) {
-	res.render('pages/about');
-})
+try {
+	require(__dirname + '/config.json');
+}
+catch (err) {
+	throw new Error('Check to see if config file is valid!')
+}
 
-app.get('/contact', function (req, res) {
-	res.render('pages/contact');
-})
-
-app.get('/programming', function (req, res) {
-	res.render('pages/programming');
-})
-
-app.get('/robot', function (req, res) {
-	res.render('pages/robot');
-})
-
-app.get('/log', function (req, res) {
-	res.render('pages/timelogging');
-})
-
-app.use(express.static(__dirname + '/public'));
+var url = require(__dirname + '/config.json').mongoURI;
 
 MongoClient.connect(url, function (err, db) {
 	
@@ -55,9 +42,8 @@ MongoClient.connect(url, function (err, db) {
 	
 	console.log('Connected to db');
 	
-	// register routes
+	// register database-dependent routes
 	require(__dirname + '/libs/timesigning.js')(app, db, todayID);
-	//db.close();
 })
 
 // goes outside out db connection
