@@ -33,7 +33,12 @@ $("#signin").click(function () {
                 url: "http://localhost:1200/signin",
                 processData: false,
                 contentType: 'application/json',
-                data: JSON.stringify(data)
+                data: JSON.stringify(data),
+                success: function (response) {
+                        if (response.error != null) {
+                                alert(response.error)
+                        }
+                }
         })
 })
 
@@ -45,7 +50,12 @@ $("#signout").click(function () {
                 url: "http://localhost:1200/signout",
                 processData: false,
                 contentType: 'application/json',
-                data: JSON.stringify(data)
+                data: JSON.stringify(data),
+                success: function (response) {
+                        if (response.error != null) {
+                                alert(response.error)
+                        }
+                }
         })
 })
 </script>
