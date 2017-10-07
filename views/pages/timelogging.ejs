@@ -1,0 +1,61 @@
+<head>
+<% include ../partials/header %>
+</head>
+
+<style media="screen">
+        button {
+                margin: 5px 5px 0px 0px;
+        }
+        
+        input {
+                width: 16em;
+        }
+</style>
+<body>
+        <div class="flex vertical">
+                <input type="text" id="name" placeholder="Enter name here">
+                
+                <p>Note: Please do NOT do this process more than once a day</p>
+                
+                <div class="flex">
+                        <button type="button" id="signin">In</button>
+                        <button type="button" id="signout">Out</button>
+                </div>
+        </div>
+</body>
+<script type="text/javascript">
+
+$("#signin").click(function () {
+        var data = {name: $("#name").val()};
+        
+        $.ajax({
+                type: "POST",
+                url: "http://localhost:1200/signin",
+                processData: false,
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function (response) {
+                        if (response.error != null) {
+                                alert(response.error)
+                        }
+                }
+        })
+})
+
+$("#signout").click(function () {
+        var data = {name: $("#name").val()};
+        
+        $.ajax({
+                type: "POST",
+                url: "http://localhost:1200/signout",
+                processData: false,
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function (response) {
+                        if (response.error != null) {
+                                alert(response.error)
+                        }
+                }
+        })
+})
+</script>
