@@ -34,7 +34,7 @@ app.get('/robot', function (req, res) {
 	res.render('pages/robot');
 })
 
-app.get('/timelog', function (req, res) {
+app.get('/log', function (req, res) {
 	res.render('pages/timelogging');
 })
 
@@ -56,7 +56,7 @@ MongoClient.connect(url, function (err, db) {
 	console.log('Connected to db');
 	
 	// register routes
-	require(__dirname + '/libs/timesingning.js')(app, db, todayID);
+	require(__dirname + '/libs/timesigning.js')(app, db, todayID);
 	//db.close();
 })
 

@@ -9,6 +9,8 @@ module.exports = (app, db, date) => {
                        }
                })*/
                
+               console.log(req.body.name);
+               
                db.collection('timelogs').findOne({_id: date}, function (err, doc) {
                        // validate the name
                        require(__dirname + '/namevalidator.js').testName(db, req.body.name).then(() => {
