@@ -1,0 +1,26 @@
+<head>
+<% include ../partials/header %>
+</head>
+<body>
+        <div class="flex vertical">
+                <input type="text" id="name" value="alex">
+                <button type="button" id="submit">Submit</button>
+        </div>
+</body>
+<script type="text/javascript">
+$("#submit").click(function () {
+        var data = {name: $("#name").val()};
+        
+        $.ajax({
+                type: "POST",
+                url: "http://localhost:1200/signin",
+                processData: false,
+                contentType: 'application/json',
+                data: JSON.stringify(data)
+        })
+        
+        /*$.post("http://localhost:1200/signin", {name : $("#name").value}, function (data, status) {
+                alert(data.error);
+        })*/
+})
+</script>

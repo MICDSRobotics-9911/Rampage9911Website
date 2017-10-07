@@ -34,6 +34,10 @@ app.get('/robot', function (req, res) {
 	res.render('pages/robot');
 })
 
+app.get('/timelog', function (req, res) {
+	res.render('pages/timelogging');
+})
+
 app.use(express.static(__dirname + '/public'));
 
 MongoClient.connect(url, function (err, db) {
