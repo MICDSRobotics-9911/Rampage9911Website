@@ -74,9 +74,9 @@ module.exports = (app, db, date) => {
                                         var difHours = signout.getHours() - signin.getHours();
                                         var difMinutes = signout.getMinutes() - signin.getMinutes();
                                         var difSeconds = signout.getSeconds() - signin.getSeconds();
-                                        console.log(`Difference: ${difHours}:${difMinutes}:${difSeconds}`);
+                                        console.log(`Difference: ${Math.abs(difHours)}:${Math.abs(difMinutes)}:${Math.abs(difSeconds)}`);
                                         
-                                        temp[i].difference = `${difHours}:${difMinutes}:${difSeconds}`
+                                        temp[i].difference = `${Math.abs(difHours)}:${Math.abs(difMinutes)}:${Math.abs(difSeconds)}`
                                         
                                         console.log(temp);
                                         
