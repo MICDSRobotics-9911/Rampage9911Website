@@ -21,13 +21,23 @@
         </div>
 </body>
 <script type="text/javascript">
+var url = "";
+var prod = false;
+
+if (prod) {
+        url = "https://beta.amtstl.xyz";
+}
+else {
+        url = "http://localhost:1200";
+}
+
 
 $("#signin").click(function () {
         var data = {name: $("#name").val().toLowerCase()};
         
         $.ajax({
                 type: "POST",
-                url: "https://beta.amtstl.xyz/signin",
+                url: url + "/signin",
                 processData: false,
                 contentType: 'application/json',
                 data: JSON.stringify(data),
@@ -47,7 +57,7 @@ $("#signout").click(function () {
         
         $.ajax({
                 type: "POST",
-                url: "https://beta.amtstl.xyz/signout",
+                url: url + "/signout",
                 processData: false,
                 contentType: 'application/json',
                 data: JSON.stringify(data),
