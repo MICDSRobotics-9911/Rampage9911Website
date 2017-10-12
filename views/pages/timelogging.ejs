@@ -14,9 +14,6 @@
 <body>
         <div class="flex vertical">
                 <input type="text" id="name" placeholder="Enter name here">
-                
-                <p>Note: Please do NOT do this process more than once a day</p>
-                
                 <div class="flex">
                         <button type="button" id="signin">In</button>
                         <button type="button" id="signout">Out</button>
@@ -36,7 +33,7 @@ else {
 
 
 $("#signin").click(function () {
-        var data = {name: $("#name").val()};
+        var data = {name: $("#name").val().toLowerCase()};
         
         $.ajax({
                 type: "POST",
@@ -48,12 +45,15 @@ $("#signin").click(function () {
                         if (response.error != null) {
                                 alert(response.error)
                         }
+                        else {
+                                alert('Signed in!');
+                        }
                 }
         })
 })
 
 $("#signout").click(function () {
-        var data = {name: $("#name").val()};
+        var data = {name: $("#name").val().toLowerCase()};
         
         $.ajax({
                 type: "POST",
@@ -64,6 +64,9 @@ $("#signout").click(function () {
                 success: function (response) {
                         if (response.error != null) {
                                 alert(response.error)
+                        }
+                        else {
+                                alert('Signed out!');
                         }
                 }
         })
