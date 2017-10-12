@@ -37,5 +37,11 @@ to run the server, run
 nodemon index.js
 ```
 
+or run
+
+```
+npm run live
+```
+
 # Information
 The backend server is written in node.js (the index.js). The files in the views folder contains the `.ejs` files that are the actual pages
