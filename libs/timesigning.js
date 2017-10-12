@@ -100,9 +100,23 @@ module.exports = (app, db, date) => {
         
         app.get('/lastlog', (req, res) => {
                 db.collection('timelogs').find({}).toArray(function (err, results) {
+                        var last = results[results.length - 1].logs;
+                        var output = "";
+                        
+                        for (var e = 0; e < last.length; e++) {                                
+                                output += `${last[e].name},${last[e].difference}\n`
+                        }
+                        
+                        var fs = require('fs');
+                        fs.writeFile("lastlog.csv", output, (err) => {
+                                if (!err) {
+                                     console.log("lastlog outputted");   
+                                }
+                        })                        
+                        
                         res.json({
                                 error: null,
-                                lastlog: results[results.length - 1]
+                                lastlog: output
                         })
                 })
         });
