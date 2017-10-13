@@ -31,20 +31,29 @@ catch (err) {
 	throw new Error('Check to see if config file is valid!')
 }
 
-var url = require(__dirname + '/config.json').mongoURI;
+var url = "";
+
+if (require(__dirname + '/config.json').production) {
+	url = require(__dirname + '/config.json').mongoURI;
+}
+else {
+	url = require(__dirname + '/config.json').testingURI;
+}
 
 MongoClient.connect(url, function (err, db) {
 	
 	var todayID = hashGen(8);
 	console.log(todayID);
 	
-	if (require(__dirname + '/config.json').production) {
-		db.collection('timelogs').insertOne({_id: todayID, 'date': new Date(), 'logs': []}, (err) => {
-			if (err) {
-				throw err;
-			}
-		});
-	}
+	db.collection('timelogs').insertOne({_id: todayID, 'date': new Date(), 'logs': []}, (err) => {
+		if (err) {
+			throw err;
+		}
+	});
+	
+	/*if (require(__dirname + '/config.json').production) {
+		
+	}*/
 	
 	console.log('Connected to db');
 	

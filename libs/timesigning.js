@@ -108,16 +108,9 @@ module.exports = (app, db, date) => {
                         }
                         
                         var fs = require('fs');
-                        fs.writeFile("lastlog.csv", output, (err) => {
-                                if (!err) {
-                                     console.log("lastlog outputted");   
-                                }
-                        })                        
+                        fs.writeFileSync("lastlog.csv", output);
                         
-                        res.json({
-                                error: null,
-                                lastlog: output
-                        })
+                        res.download(__dirname + "/../lastlog.csv");
                 })
         });
 }
