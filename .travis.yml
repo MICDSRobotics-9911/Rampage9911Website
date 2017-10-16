@@ -5,6 +5,7 @@ node_js:
  
 before_script:
  - npm install -D
+ - npm install -g documentation
  
 script:
- - node index.js &
+ - npm run doc:build
