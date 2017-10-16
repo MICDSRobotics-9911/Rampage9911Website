@@ -1,5 +1,11 @@
 module.exports = {
         
+        /**
+         * Tests if a name is valid
+         * @param  {Database} db the current database instance
+         * @param  {string} name the name to be tested
+         * @return {Promise} the result in a promise
+         */
         testName: function (db, name) {
                 const p = new Promise((resolve, reject) => {
                         db.collection('users').find({}).toArray( function (err, results) {

@@ -1,4 +1,11 @@
 module.exports = (app, db, date) => {
+        
+        /**
+        * /signin
+        * @param {string} name the name to be signed in
+        * @return {JSON} a null error if operation was successfull
+        * @throws {error} if name provided wasn't in the database
+        */
         app.post('/signin', (req, res) => {
                /*db.collection('timelogs').find({}).toArray( function (err, results) {
                        for (var i = 0; i < results.length; i++) {
@@ -53,6 +60,12 @@ module.exports = (app, db, date) => {
                })
         });
         
+        /**
+        * /signout
+        * @param {string} name the name to be signed out
+        * @return {JSON} null error if there wasn't a problem
+        * @return {error} if the name provided wasn't in the database
+        */        
         app.post('/signout', (req, res) => {
                 // find the name in the db, update the signout
                 //res.end('hello from signout');
@@ -91,6 +104,11 @@ module.exports = (app, db, date) => {
                 })
         });
         
+        /**
+         * /newmember adds a new member to the database
+         * @param member the name to be added
+         * @return {JSON} null error if there wasn't a problem
+         */
         app.post('/newmember', (req, res) => {
                 db.collection('users').insertOne({name: req.body.member});
                 res.json({
@@ -98,6 +116,10 @@ module.exports = (app, db, date) => {
                 })
         });
         
+        /**
+         * /lastlog gets a CSV file of the last log
+         * @return {CSV} a CSV file of the current log
+         */
         app.get('/lastlog', (req, res) => {
                 db.collection('timelogs').find({}).toArray(function (err, results) {
                         var last = results[results.length - 1].logs;
