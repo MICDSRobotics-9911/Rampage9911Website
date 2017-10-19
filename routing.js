@@ -22,4 +22,8 @@ module.exports = (app) => {
         app.get('/log', function (req, res) {
         	res.render('pages/timelogging');
         })
+        
+        app.get('/first', function (req, res) {
+        	res.render('pages/first');
+        })
 }
