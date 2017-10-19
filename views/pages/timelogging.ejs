@@ -14,6 +14,7 @@
 <body>
         <div class="flex vertical">
                 <input type="text" id="name" placeholder="Enter name here">
+                <input type="text" id="password" placeholder="Enter password here">
                 <div class="flex">
                         <button type="button" id="signin">In</button>
                         <button type="button" id="signout">Out</button>
@@ -33,7 +34,10 @@ else {
 
 
 $("#signin").click(function () {
-        var data = {name: $("#name").val().toLowerCase()};
+        var data = {
+                  name: $("#name").val().toLowerCase(),
+                  password: $("#password").val()
+        };
         
         $.ajax({
                 type: "POST",
@@ -53,7 +57,9 @@ $("#signin").click(function () {
 })
 
 $("#signout").click(function () {
-        var data = {name: $("#name").val().toLowerCase()};
+          var data = {
+                   name: $("#name").val().toLowerCase()
+         };
         
         $.ajax({
                 type: "POST",

@@ -9,6 +9,9 @@ var bodyParser = require('body-parser');
 var hashGen = require('hash-generator');
 //var jsonParser = bodyParser.json();
 
+// password hashing
+var bcrypt = require('bcrypt');
+
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
@@ -40,6 +43,31 @@ else {
 	url = require(__dirname + '/config.json').testingURI;
 }
 
+function hash1() {
+	return new Promise((resolve) => {
+		var raw = hashGen(4)
+		bcrypt.hash(raw, 10, (err, hash) => {
+			if (!err) {
+				resolve({"hash": hash, "raw": raw});
+			}
+		})
+	})
+}
+
+async function hashNewPasswords(db) {
+	db.collection('users').find({}).toArray(async (error, results) => {
+		for (var i = 0; i < results.length; i++) {
+			/*var credentials = {
+				"name": results[i].name,
+				"password": hashGen(4)
+			}*/
+			
+			var newHash = await hash1()
+			db.collection('users').update({_id: results[i]._id}, {"name": results[i].name, "password": newHash.hash, "raw": newHash.raw});
+		}
+	})
+}
+
 MongoClient.connect(url, function (err, db) {
 	
 	var todayID = hashGen(8);
@@ -51,9 +79,7 @@ MongoClient.connect(url, function (err, db) {
 		}
 	});
 	
-	/*if (require(__dirname + '/config.json').production) {
-		
-	}*/
+	hashNewPasswords(db);
 	
 	console.log('Connected to db');
 	

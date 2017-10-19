@@ -18,6 +18,13 @@ module.exports = (app, db, date) => {
                
                console.log(req.body.name);
                
+               // preliminary check password
+               db.collection('users').findOne({"name": req.body.name}, function (err, doc) {
+                         require('bcrypt').compare(req.body.password, doc.password, function (err, res) {
+                                   console.log(res);
+                         })
+               })
+               
                db.collection('timelogs').findOne({_id: date}, function (err, doc) {
                        var stop = false;
                        
