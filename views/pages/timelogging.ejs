@@ -3,72 +3,72 @@
 </head>
 
 <style media="screen">
-        button {
-                margin: 5px 5px 0px 0px;
-        }
-        
-        input {
-                width: 16em;
-        }
+	button {
+	margin: 5px 5px 0px 0px;
+	}
+
+	input {
+	width: 16em;
+	}
 </style>
 <body>
-        <div class="flex vertical">
-                <input type="text" id="name" placeholder="Enter name here">
-                <div class="flex">
-                        <button type="button" id="signin">In</button>
-                        <button type="button" id="signout">Out</button>
-                </div>
-        </div>
+	<div class="flex vertical">
+	<input type="text" id="name" placeholder="Enter name here">
+	<div class="flex">
+		<button type="button" id="signin">In</button>
+		<button type="button" id="signout">Out</button>
+	</div>
+	</div>
 </body>
 <script type="text/javascript">
-var url = "";
-var prod = false;
+	var url = "";
+	var prod = false;
 
-if (prod) {
-        url = "https://beta.amtstl.xyz";
-}
-else {
-        url = "http://localhost:1200";
-}
+	if (prod) {
+		url = "https://beta.amtstl.xyz";
+	}
+	else {
+		url = "http://localhost:1200";
+	}
 
 
-$("#signin").click(function () {
-        var data = {name: $("#name").val().toLowerCase()};
-        
-        $.ajax({
-                type: "POST",
-                url: url + "/signin",
-                processData: false,
-                contentType: 'application/json',
-                data: JSON.stringify(data),
-                success: function (response) {
-                        if (response.error != null) {
-                                alert(response.error)
-                        }
-                        else {
-                                alert('Signed in!');
-                        }
-                }
-        })
-})
+	$("#signin").click(function () {
+		var data = {name: $("#name").val().toLowerCase()};
 
-$("#signout").click(function () {
-        var data = {name: $("#name").val().toLowerCase()};
-        
-        $.ajax({
-                type: "POST",
-                url: url + "/signout",
-                processData: false,
-                contentType: 'application/json',
-                data: JSON.stringify(data),
-                success: function (response) {
-                        if (response.error != null) {
-                                alert(response.error)
-                        }
-                        else {
-                                alert('Signed out!');
-                        }
-                }
-        })
-})
+		$.ajax({
+			type: "POST",
+			url: url + "/signin",
+			processData: false,
+			contentType: 'application/json',
+			data: JSON.stringify(data),
+			success: function (response) {
+				if (response.error != null) {
+					alert(response.error)
+				}
+				else {
+					alert('Signed in!');
+				}
+			}
+		})
+	})
+
+	$("#signout").click(function () {
+		var data = {name: $("#name").val().toLowerCase()};
+
+		$.ajax({
+			type: "POST",
+			url: url + "/signout",
+			processData: false,
+			contentType: 'application/json',
+			data: JSON.stringify(data),
+			success: function (response) {
+				if (response.error != null) {
+					alert(response.error)
+				}
+				else {
+					alert('Signed out!');
+				}
+			}
+		})
+	})
 </script>
