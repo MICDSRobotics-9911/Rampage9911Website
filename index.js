@@ -24,20 +24,18 @@ app.use((req, res, next) => {
 // 'front-end' routing
 require(__dirname + '/routing.js')(app);
 
+let config;
 try {
-	require(__dirname + '/config.json');
-}
-catch (err) {
+	config = require(__dirname + '/config.json');
+} catch (err) {
 	throw new Error('Check to see if config file is valid!');
 }
 
-let url = '';
-
-if (require(__dirname + '/config.json').production) {
-	url = require(__dirname + '/config.json').mongoURI;
-}
-else {
-	url = require(__dirname + '/config.json').testingURI;
+let url;
+if (config.production) {
+	url = config.mongoURI;
+} else {
+	url = config.testingURI;
 }
 
 MongoClient.connect(url, (err, db) => {
@@ -49,10 +47,6 @@ MongoClient.connect(url, (err, db) => {
 			throw err;
 		}
 	});
-
-	/*if (require(__dirname + '/config.json').production) {
-
-	}*/
 
 	console.log('Connected to db');
 

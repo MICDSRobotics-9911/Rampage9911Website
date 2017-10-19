@@ -23,8 +23,8 @@ module.exports = (app, db, date) => {
 		db.collection('timelogs').findOne({_id: date}, (err, doc) => {
 			let stop = false;
 
-			for (let e = 0; e < doc.logs.length; e++) {
-				if (doc.logs[e].name.includes(req.body.name)) {
+			for (const log of doc.logs) {
+				if (log.name.includes(req.body.name)) {
 					res.json({
 						error: 'member has already signed in today'
 					});
