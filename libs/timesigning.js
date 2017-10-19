@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 module.exports = (app, db, date) => {
 
 	/**
@@ -72,6 +74,7 @@ module.exports = (app, db, date) => {
 
 		// get the correct date
 		db.collection('timelogs').findOne({_id: date}, (err, doc) => {
+			// TODO: see if this can be converted to `for..of`
 			for (let i = 0; i < doc.logs.length; i++) {
 				if (doc.logs[i].name.includes(req.body.name)) {
 					const temp = doc.logs;
@@ -124,11 +127,10 @@ module.exports = (app, db, date) => {
 			const last = results[results.length - 1].logs;
 			let output = '';
 
-			for (let e = 0; e < last.length; e++) {
-				output += `${last[e].name},${last[e].difference}\n`;
+			for (const log of last) {
+				output += `${log.name},${log.difference}\n`;
 			}
 
-			const fs = require('fs');
 			fs.writeFileSync('lastlog.csv', output);
 
 			res.download(__dirname + '/../lastlog.csv');

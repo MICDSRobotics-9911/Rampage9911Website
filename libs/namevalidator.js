@@ -6,13 +6,12 @@ module.exports = {
 	 * @param  {string} name the name to be tested
 	 * @return {Promise} the result in a promise
 	 */
-	testName: function (db, name) {
-		const p = new Promise((resolve, reject) => {
+	testName(db, name) {
+		return new Promise((resolve, reject) => {
 			db.collection('users').find({}).toArray( (err, results) => {
 				//console.log(name);
-				for (let i = 0; i < results.length; i++) {
-					//console.log(results[i].name);
-					if (results[i].name.includes(name)) {
+				for (const result of results) {
+					if (result.name.includes(name)) {
 						console.log('found name');
 						resolve();
 					}
@@ -20,7 +19,5 @@ module.exports = {
 				reject();
 			});
 		});
-
-		return p;
 	}
 };

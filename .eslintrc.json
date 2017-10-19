@@ -15,6 +15,7 @@
 		"no-console": "off",
 		"prefer-arrow-callback": "error",
 		"eqeqeq": ["error", "always"],
-		"camelcase": ["warn", {"properties": "always"}]
+		"camelcase": ["warn", {"properties": "always"}],
+		"object-shorthand": ["error", "always"]
 	}
 }
