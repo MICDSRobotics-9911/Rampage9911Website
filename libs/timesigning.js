@@ -19,17 +19,35 @@ module.exports = (app, db, date) => {
                console.log(req.body.name);
                
                db.collection('timelogs').findOne({_id: date}, function (err, doc) {
-                       var stop = false;
+                       var stop = false
                        
-                       for (var e = 0; e < doc.logs.length; e++) {
-                               if (doc.logs[e].name.includes(req.body.name)) {
-                                       res.json({
-                                               error: "member has already signed in today"
-                                       })
-                                       
-                                       stop = true;
-                                       break;
+                       require(__dirname + '/namevalidator').checkPassword(db, req.body.name, req.body.password)
+                       .then((result) => {
+                               if (result) {
+                                       stop = false;
                                }
+                               else {
+                                       stop = true;
+                               }
+                       })
+                       .catch((fail) => {
+                               stop = true;
+                               res.json({
+                                       error: fail
+                               })
+                       })
+                       
+                       if (stop === false) {
+                               for (var e = 0; e < doc.logs.length; e++) {
+                                       if (doc.logs[e].name.includes(req.body.name)) {
+                                               res.json({
+                                                       error: "Member has already signed in today"
+                                               })
+                                               
+                                               stop = true;
+                                               break;
+                                       }
+                               }       
                        }
                        
                        if (stop === false) {
@@ -68,40 +86,62 @@ module.exports = (app, db, date) => {
         */        
         app.post('/signout', (req, res) => {
                 // find the name in the db, update the signout
-                //res.end('hello from signout');
+                // res.end('hello from signout
                 
-                // get the correct date
-                db.collection('timelogs').findOne({_id: date}, function (err, doc) {
-                        for (var i = 0; i < doc.logs.length; i++) {
-                                if (doc.logs[i].name.includes(req.body.name)) {
-                                        var temp = doc.logs;
-                                        temp[i].signout = new Date();
-                                        
-                                        var signin = new Date(temp[i].signin);
-                                        var signout = new Date(temp[i].signout);
-                                        var difference = new Date(signout - signin);
-                                        
-                                        console.log(signin.getHours() + ":" + signin.getMinutes() + ":" + signin.getSeconds());
-                                        console.log(signout.getHours() + ":" + signout.getMinutes() + ":" + signout.getSeconds());
-                                        
-                                        var difHours = signout.getHours() - signin.getHours();
-                                        var difMinutes = signout.getMinutes() - signin.getMinutes();
-                                        var difSeconds = signout.getSeconds() - signin.getSeconds();
-                                        console.log(`Difference: ${Math.abs(difHours)}:${Math.abs(difMinutes)}:${Math.abs(difSeconds)}`);
-                                        
-                                        temp[i].difference = `${Math.abs(difHours)}:${Math.abs(difMinutes)}:${Math.abs(difSeconds)}`
-                                        
-                                        console.log(temp);
-                                        
-                                        // update the database
-                                        db.collection('timelogs').update({_id: date}, {logs: temp});
-                                        break;
-                                }
+                var stop = false;
+                
+                // TODO: get this out of a parallel operation
+                
+                require(__dirname + '/namevalidator').checkPassword(db, req.body.name, req.body.password)
+                .then((result) => {
+                        if (result) {
+                                stop = false;
                         }
+                        else {
+                                stop = true;
+                        }
+                })
+                .catch((fail) => {
+                        stop = true;
                         res.json({
-                                error: null
+                                error: fail
                         })
                 })
+                
+                if (stop === false) {
+                        // get the correct date
+                        db.collection('timelogs').findOne({_id: date}, function (err, doc) {
+                                for (var i = 0; i < doc.logs.length; i++) {
+                                        if (doc.logs[i].name.includes(req.body.name)) {
+                                                var temp = doc.logs;
+                                                temp[i].signout = new Date();
+                                                
+                                                var signin = new Date(temp[i].signin);
+                                                var signout = new Date(temp[i].signout);
+                                                var difference = new Date(signout - signin);
+                                                
+                                                console.log(signin.getHours() + ":" + signin.getMinutes() + ":" + signin.getSeconds());
+                                                console.log(signout.getHours() + ":" + signout.getMinutes() + ":" + signout.getSeconds());
+                                                
+                                                var difHours = signout.getHours() - signin.getHours();
+                                                var difMinutes = signout.getMinutes() - signin.getMinutes();
+                                                var difSeconds = signout.getSeconds() - signin.getSeconds();
+                                                console.log(`Difference: ${Math.abs(difHours)}:${Math.abs(difMinutes)}:${Math.abs(difSeconds)}`);
+                                                
+                                                temp[i].difference = `${Math.abs(difHours)}:${Math.abs(difMinutes)}:${Math.abs(difSeconds)}`
+                                                
+                                                console.log(temp);
+                                                
+                                                // update the database
+                                                db.collection('timelogs').update({_id: date}, {logs: temp});
+                                                break;
+                                        }
+                                }
+                                res.json({
+                                        error: null
+                                })
+                        })
+                }
         });
         
         /**

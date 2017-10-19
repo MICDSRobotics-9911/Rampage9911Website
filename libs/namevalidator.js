@@ -24,5 +24,21 @@ module.exports = {
                 })
                 
                 return p;                      
+        },
+        
+        checkPassword: function (db, name, pass) {
+                return new Promise((resolve, reject) => {
+                        // preliminary check password
+                        db.collection('users').findOne({"name": name}, function (err, doc) {
+                                  require('bcrypt').compare(pass, doc.password, function (err, res) {
+                                            if (!err) {
+                                                    resolve(res);
+                                            }
+                                            else {
+                                                    reject(err);
+                                            }
+                                  })
+                        })
+                })
         }
 }
