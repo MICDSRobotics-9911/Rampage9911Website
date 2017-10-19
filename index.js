@@ -43,7 +43,7 @@ else {
 	url = require(__dirname + '/config.json').testingURI;
 }
 
-function hash1() {
+function hash() {
 	return new Promise((resolve) => {
 		var raw = hashGen(4)
 		bcrypt.hash(raw, 10, (err, hash) => {
@@ -55,15 +55,16 @@ function hash1() {
 }
 
 async function hashNewPasswords(db) {
-	db.collection('users').find({}).toArray(async (error, results) => {
+	db.collection('users').find({}).toArray(async (error, results) => {		
 		for (var i = 0; i < results.length; i++) {
 			/*var credentials = {
 				"name": results[i].name,
 				"password": hashGen(4)
 			}*/
 			
-			var newHash = await hash1()
-			db.collection('users').update({_id: results[i]._id}, {"name": results[i].name, "password": newHash.hash, "raw": newHash.raw});
+			var newHash = await hash()
+			console.log(`${results[i].name}'s password is ${newHash.raw}`);
+			db.collection('users').update({_id: results[i]._id}, {"name": results[i].name, "password": newHash.hash});
 		}
 	})
 }
