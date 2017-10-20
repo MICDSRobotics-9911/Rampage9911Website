@@ -39,10 +39,10 @@ module.exports = (app, db, date) => {
 				require(__dirname + '/namevalidator.js').testName(db, req.body.name).then(() => {
 					const temp = doc.logs;
 					const template = {
-						'name': req.body.name,
-						'signin': new Date(),
-						'signout': null,
-						'difference': null
+						name: req.body.name,
+						signin: new Date(),
+						signout: null,
+						difference: null
 					};
 
 					temp.push(template);
@@ -52,12 +52,11 @@ module.exports = (app, db, date) => {
 					res.json({
 						error: null
 					});
-				})
-					.catch(() => {
-						res.json({
-							error: 'name provided not in database'
-						});
+				}).catch(() => {
+					res.json({
+						error: 'name provided not in database'
 					});
+				});
 			}
 		});
 	});

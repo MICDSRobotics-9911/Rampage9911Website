@@ -42,7 +42,7 @@ MongoClient.connect(url, (err, db) => {
 	const todayID = hashGen(8);
 	console.log(todayID);
 
-	db.collection('timelogs').insertOne({_id: todayID, 'date': new Date(), 'logs': []}, (err) => {
+	db.collection('timelogs').insertOne({_id: todayID, date: new Date(), logs: []}, (err) => {
 		if (err) {
 			throw err;
 		}
