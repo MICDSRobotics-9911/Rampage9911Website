@@ -123,7 +123,7 @@ module.exports = (app, db, date) => {
         app.get('/lastlog', (req, res) => {
                 db.collection('timelogs').find({}).toArray(function (err, results) {
                         var last = results[results.length - 1].logs;
-                        var output = "";
+                        var output = `id, ${results[results.length - 1]._id}\n`;
                         
                         for (var e = 0; e < last.length; e++) {                                
                                 output += `${last[e].name},${last[e].difference}\n`
