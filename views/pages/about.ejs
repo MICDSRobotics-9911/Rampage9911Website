@@ -160,6 +160,11 @@ var imgConfig = {
                         {
                                 "name":"Nick",
                                 "bio":"none",
+                                "imgpath":"/team/nick.jpg"
+                        },
+						{
+                                "name":"...and all of our great coaches!",
+                                "bio":"none",
                                 "imgpath":"/team/na.jpg"
                         },
                 ]
@@ -180,10 +185,10 @@ function generateImageLine(i) {
         src.value = this.imgConfig.people[i].imgpath;
 
         var height = document.createAttribute("height");
-        height.value = "200px";
+        height.value = "220px";
 
         var width = document.createAttribute("width");
-        width.value = "160px";
+        width.value = "146px";
 
         var style = document.createAttribute("style");
         style.value = "margin-bottom: 15px;";
