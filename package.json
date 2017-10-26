@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "lint": "eslint .",
+    "test": "eslint .",
     "live": "nodemon index.js",
     "doc:build": "documentation build libs/*.js",
     "doc:live": "documentation serve libs/*.js"
@@ -16,8 +15,6 @@
     "body-parser": "^1.18.2",
     "ejs": "^2.5.7",
     "express": "^4.15.4",
-    "hash-generator": "^0.1.0",
-    "moment": "^2.18.1",
     "mongodb": "^2.2.31"
   },
   "devDependencies": {

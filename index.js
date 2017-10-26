@@ -4,10 +4,7 @@ const app = express();
 // database
 const MongoClient = require('mongodb').MongoClient;
 
-//var url = require(__dirname + '/config.json').mongoURI;
 const bodyParser = require('body-parser');
-const hashGen = require('hash-generator');
-//var jsonParser = bodyParser.json();
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
@@ -38,20 +35,8 @@ if (config.production) {
 	url = config.testingURI;
 }
 
-MongoClient.connect(url, (err, db) => {
-	const todayID = hashGen(8);
-	console.log(todayID);
-
-	db.collection('timelogs').insertOne({_id: todayID, date: new Date(), logs: []}, (err) => {
-		if (err) {
-			throw err;
-		}
-	});
-
+MongoClient.connect(url, () => {
 	console.log('Connected to db');
-
-	// register database-dependent routes
-	require(__dirname + '/libs/timesigning.js')(app, db, todayID);
 });
 
 // goes outside out db connection
