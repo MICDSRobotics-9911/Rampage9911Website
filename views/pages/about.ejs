@@ -1,224 +1,228 @@
 <head>
-<% include ../partials/header %>
+	<% include ../partials/header %>
 
-<style>
-.custom {
-        margin-top: 25px;
-		margin-right: 100px;
-		margin-left: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-}
+	<style>
+		.custom {
+			margin-top: 25px;
+			margin-right: 100px;
+			margin-left: 100px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
 
-em {
-        margin: 0px 20px 100px 20px;
-        letter-spacing: 1px;
-}
+		em {
+			margin: 0px 20px 100px 20px;
+			letter-spacing: 1px;
+		}
 
-div {
-        -webkit-animation: fadein 1s;
-}
+		div {
+			-webkit-animation: fadein 1s;
+		}
 
-h1, p {
-        -webkit-animation: fadein 2s;
-}
-</style>
+		h1, p {
+			-webkit-animation: fadein 2s;
+		}
+	</style>
 </head>
 <div class="flex custom">
-        <h1>About Us</h1>
-        <p>Technoramic is the co-ed high school robotics team from MICDS. We offer robotics after school, for four hours per week. Our team values good sportsmanship, proper self-conduct, honesty, and gracious professionalism.
+	<h1>About Us</h1>
+	<p>
+		Technoramic is the co-ed high school robotics team from MICDS. We offer robotics after school, for four hours per week. Our team values good sportsmanship, proper self-conduct, honesty, and gracious professionalism.
 
-Many of our members have prior experience in FTC, while a few came to us this year with little to no experience at all. Regardless of grade and robotics background, our members have developed a passion for the team and have bonded immensely.
+		Many of our members have prior experience in FTC, while a few came to us this year with little to no experience at all. Regardless of grade and robotics background, our members have developed a passion for the team and have bonded immensely.
 
-We have an inexorable motivation and drive to win!
-</br> </br></p>
-<em>Sincerely,</br>
-Technoramic Robotics Team
-</em>
-        <h1>Team Roster</h1>
+		We have an inexorable motivation and drive to win!
+		<br><br>
+	</p>
+	<em>
+		Sincerely,<br>
+		Technoramic Robotics Team
+	</em>
+	<h1>Team Roster</h1>
 </div>
 
-<div class="custom" id="master">
+<div class='custom' id='master'>
 </div>
 
 <script>
-var imgConfig = {
-               "people": [
-                        {
-                                "name":"Kendall",
-                                "bio":"Team Captain",
-                                "imgpath":"/team/kendall.jpg"
-                        },
-                        {
-                                "name":"Megan",
-                                "bio":"Outreach Captain",
-                                "imgpath":"/team/megan.jpg"
-                        },
-                        {
-                                "name":"Blake",
-                                "bio":"Programming Captain",
-                                "imgpath":'/team/blake.jpg'
-                        },
-                        {
-                                "name":"Ehan",
-                                "bio":"3D Printing Captain",
-                                "imgpath":'/team/ehan.jpg'
-                        },
-                        {
-                                "name":"Amir",
-                                "bio":"3D Printing Co-Captain",
-                                "imgpath":'/team/amir.jpg'
-                        },
-                        {
-                                "name":"Will",
-                                "bio":"Construction",
-                                "imgpath":"/team/will.jpg"
-                        },
-                        {
-                                "name":"Jude",
-                                "bio":"3D Modeling",
-                                "imgpath":"/team/jude.jpg"
-                        },
-                        {
-                                "name":"Alex",
-                                "bio":"Programming",
-                                "imgpath":"/team/alex.jpg"
-                        },
-                        {
-                                "name":"Kyle",
-                                "bio":"Construction",
-                                "imgpath":"/team/kyle.jpg"
-                        },
-                        {
-                                "name":"Benjamin",
-                                "bio":"none",
-                                "imgpath":"/team/na.jpg"
-                        },
-                        {
-                                "name":"Allen",
-                                "bio":"none",
-                                "imgpath":"/team/na.jpg"
-                        },
-                        {
-                                "name":"Sofi",
-                                "bio":"none",
-                                "imgpath":"/team/na.jpg"
-                        },
-                        {
-                                "name":"Prithvi",
-                                "bio":"none",
-                                "imgpath":"/team/na.jpg"
-                        },
-                        {
-                                "name":"Hasani",
-                                "bio":"none",
-                                "imgpath":"/team/na.jpg"
-                        },
-                        {
-                                "name":"Kellen",
-                                "bio":"none",
-                                "imgpath":"/team/na.jpg"
-                        },
-                        {
-                                "name":"Cassidy",
-                                "bio":"none",
-                                "imgpath":"/team/na.jpg"
-                        },
-                        {
-                                "name":"Grace",
-                                "bio":"none",
-                                "imgpath":"/team/na.jpg"
-                        },
-                        {
-                                "name":"Lucas",
-                                "bio":"none",
-                                "imgpath":"/team/na.jpg"
-                        },
-                        {
-                                "name":"Sebastian",
-                                "bio":"none",
-                                "imgpath":"/team/na.jpg"
-                        },
-                        {
-                                "name":"Maxim",
-                                "bio":"none",
-                                "imgpath":"/team/na.jpg"
-                        },
-                        {
-                                "name":"Liam",
-                                "bio":"none",
-                                "imgpath":"/team/na.jpg"
-                        },
-                        {
-                                "name":"Celia",
-                                "bio":"none",
-                                "imgpath":"/team/na.jpg"
-                        }
-						,
-                        {
-                                "name":"Nick",
-                                "bio":"none",
-                                "imgpath":"/team/na.jpg"
-                        },
-                ]
-        };
+	var imgConfig = {
+		people: [
+			{
+				name: 'Kendall',
+				bio: 'Team Captain',
+				imgpath: '/team/kendall.jpg'
+			},
+			{
+				name: 'Megan',
+				bio: 'Outreach Captain',
+				imgpath: '/team/megan.jpg'
+			},
+			{
+				name: 'Blake',
+				bio: 'Programming Captain',
+				imgpath: '/team/blake.jpg'
+			},
+			{
+				name: 'Ehan',
+				bio: '3D Printing Captain',
+				imgpath: '/team/ehan.jpg'
+			},
+			{
+				name: 'Amir',
+				bio: '3D Printing Co-Captain',
+				imgpath: '/team/amir.jpg'
+			},
+			{
+				name: 'Will',
+				bio: 'Construction',
+				imgpath: '/team/will.jpg'
+			},
+			{
+				name: 'Jude',
+				bio: '3D Modeling',
+				imgpath: '/team/jude.jpg'
+			},
+			{
+				name: 'Alex',
+				bio: 'Programming',
+				imgpath: '/team/alex.jpg'
+			},
+			{
+				name: 'Kyle',
+				bio: 'Construction',
+				imgpath: '/team/kyle.jpg'
+			},
+			{
+				name: 'Benjamin',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Allen',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Sofi',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Prithvi',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Hasani',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Kellen',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Cassidy',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Grace',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Lucas',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Sebastian',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Maxim',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Liam',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Celia',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Nick',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			}
+		]
+	};
 
-let carry = 0;
-let iterations = 2;
-function generateImageLine(i) {
+	var carry = 0;
+	var iterations = 2;
+	function generateImageLine(i) {
 
-	var container = document.createElement("DIV");
-        var margin = document.createAttribute("style");
-        margin.value = "margin-right: 25px; margin-bottom: 25px; display: flex; justify-content: center; align-items: center; flex-direction: column; color:white; font-size: 18px; font-family: 'Open Sans', sans-serif; width: 250px; height: 350px;";
-        container.setAttributeNode(margin);
+		var container = document.createElement('DIV');
+	        var margin = document.createAttribute('style');
+	        margin.value = 'margin-right: 25px; margin-bottom: 25px; display: flex; justify-content: center; align-items: center; flex-direction: column; color:white; font-size: 18px; font-family: 'Open Sans', sans-serif; width: 250px; height: 350px;';
+	        container.setAttributeNode(margin);
 
-        // create an image
-        var profile = document.createElement("IMG");
-        var src = document.createAttribute("src");
-        src.value = this.imgConfig.people[i].imgpath;
+	        // create an image
+	        var profile = document.createElement('IMG');
+	        var src = document.createAttribute('src');
+	        src.value = this.imgConfig.people[i].imgpath;
 
-        var height = document.createAttribute("height");
-        height.value = "200px";
+	        var height = document.createAttribute('height');
+	        height.value = '200px';
 
-        var width = document.createAttribute("width");
-        width.value = "160px";
+	        var width = document.createAttribute('width');
+	        width.value = '160px';
 
-        var style = document.createAttribute("style");
-        style.value = "margin-bottom: 15px;";
+	        var style = document.createAttribute('style');
+	        style.value = 'margin-bottom: 15px;';
 
-        profile.setAttributeNode(height);
-        profile.setAttributeNode(width);
-        profile.setAttributeNode(src);
-        profile.setAttributeNode(style);
-        // end create an image
-        if (this.imgConfig.people[i].bio=='none') {var name = document.createTextNode(this.imgConfig.people[i].name);
-} else {
-        var name = document.createTextNode(this.imgConfig.people[i].name + ": " + this.imgConfig.people[i].bio);
-}
-        container.appendChild(profile);
-        container.appendChild(name);
+	        profile.setAttributeNode(height);
+	        profile.setAttributeNode(width);
+	        profile.setAttributeNode(src);
+	        profile.setAttributeNode(style);
+	        // end create an image
+	        if (this.imgConfig.people[i].bio=='none') {
+			var name = document.createTextNode(this.imgConfig.people[i].name);
+		} else {
+			var name = document.createTextNode(this.imgConfig.people[i].name + ': ' + this.imgConfig.people[i].bio);
+		}
 
-        return container;
-}
+		container.appendChild(profile);
+		container.appendChild(name);
 
-for (var person = 0; person <= this.imgConfig.people.length; person++) {
-	var rowContainer = document.createElement("DIV");
-        var style = document.createAttribute("style");
-        style.value = "display: flex; justify-content: center; align-items: center; flex-direction: row";
-        rowContainer.setAttributeNode(style);
+		return container;
+	}
 
-        for (var i = 0; i < iterations; i++) {
-        //           ^ was 2 originally
-		rowContainer.appendChild(this.generateImageLine(person + i));
-		carry = (person + i);
-        }
+	for (var person = 0; person <= this.imgConfig.people.length; person++) {
+		var rowContainer = document.createElement('DIV');
+		var style = document.createAttribute('style');
+		style.value = 'display: flex; justify-content: center; align-items: center; flex-direction: row';
+		rowContainer.setAttributeNode(style);
 
-        person = carry;
-	document.getElementById("master").appendChild(rowContainer);
-}
+		for (var i = 0; i < iterations; i++) {
+		//           ^ was 2 originally
+			rowContainer.appendChild(this.generateImageLine(person + i));
+			carry = (person + i);
+		}
+
+		person = carry;
+		document.getElementById('master').appendChild(rowContainer);
+	}
 </script>
 <footer>
-  <% include ../partials/footer.ejs %>
+	<% include ../partials/footer.ejs %>
 </footer>

@@ -1,5 +1,5 @@
 {
-        "mongoURI":"",
-		"testingURI":"",
-        "production":false
+	"mongoURI": "",
+	"testingURI": "",
+	"production": false
 }

@@ -1,86 +1,88 @@
 <head>
-<% include ../partials/header %>
+	<% include ../partials/header %>
+	<style>
+	.hidden {
+			visibility: hidden;
+	}
 
-<style>
-.hidden {
-        visibility: hidden;
-}
+	.div {
+			background-color: darkgrey;
+			margin-top: 15px;
+			padding-bottom: 25px;
+	}
 
-.div {
-        background-color: darkgrey;
-        margin-top: 15px;
-        padding-bottom: 25px;
-}
+	h1, p {
+			color: white;
+	}
 
-h1, p {
-        color: white;
-}
+	input {
+		border: 2px solid darkred;
+		border-radius: 5px;
+		background-color: white;
+		color: grey;
+		font-family: 'Open Sans', sans-serif;
+		width: 300px;
+		height: 35px;
 
-input {
-	border: 2px solid darkred;
-	border-radius: 5px;
-	background-color: white;
-	color: grey;
-	font-family: 'Open Sans', sans-serif;
-	width: 300px;
-	height: 35px;
+		-webkit-transition-duration: 0.4s; /* Safari */
+		transition-duration: 0.4s;
+	}
 
-	-webkit-transition-duration: 0.4s; /* Safari */
-    	transition-duration: 0.4s;
-}
+	textarea {
+		border: 2px solid darkred;
+		border-radius: 5px;
+		background-color: white;
+		color: grey;
+		font-family: 'Open Sans', sans-serif;
+		width: 300px;
+		height: 300px;
 
-textarea {
-	border: 2px solid darkred;
-	border-radius: 5px;
-	background-color: white;
-	color: grey;
-	font-family: 'Open Sans', sans-serif;
-	width: 300px;
-	height: 300px;
+		-webkit-transition-duration: 0.4s; /* Safari */
+		transition-duration: 0.4s;
 
-	-webkit-transition-duration: 0.4s; /* Safari */
-    	transition-duration: 0.4s;
+		-webkit-transition-duration: 0.4s; /* Safari */
+		transition-duration: 0.4s;
+	}
 
-        ::-webkit-input-placeholder {
-                color: white;
-        }
+	::-webkit-input-placeholder {
+		color: white;
+	}
 
-        :-moz-placeholder {
-                color: white;
-        }
-}
+	::-moz-placeholder {
+		color: white;
+	}
 </style>
 </head>
 <div class="flex vertical div">
-        <h1>Contact Us</h1>
-        <p>You probably want to contact either Kendall Work, Megan Currie, Blake Abel, Ehan Kamat, or Amir Shinawi.</p>
-        <p class="hidden"></p>
-        <p>MICDS Contact Info: 101 North Warson Rd. St. Louis, MO 63131</p>
-        <p class="hidden"></p>
-        <h1>Email Kendall Work</h1>
-        <input placeholder="Subject Here" id="subject" />
-        <textarea placeholder="Your message here (html is supported)" id="html"></textarea>
-        <button onclick="sendContact()">Submit</button>
-        <footer style="width: 100%">
-          <% include ../partials/footer.ejs %>
-        </footer>
+	<h1>Contact Us</h1>
+	<p>You probably want to contact either Kendall Work, Megan Currie, Blake Abel, Ehan Kamat, or Amir Shinawi.</p>
+	<p class="hidden"></p>
+	<p>MICDS Contact Info: 101 North Warson Rd. St. Louis, MO 63131</p>
+	<p class="hidden"></p>
+	<h1>Email Kendall Work</h1>
+	<input placeholder="Subject Here" id="subject" />
+	<textarea placeholder="Your message here (html is supported)" id="html"></textarea>
+	<button onclick="sendContact()">Submit</button>
+	<footer style="width: 100%">
+		<% include ../partials/footer.ejs %>
+	</footer>
 </div>
 
 <script>
-function formatURL(url, to, subject, html) {
-	return url + "?to=" + to + "&subject=" + subject + "&html=" + html;
-}
+	function formatURL(url, to, subject, html) {
+		return url + '?to=' + to + '&subject=' + subject + '&html=' + html;
+	}
 
-function sendContact(to, subject, html) {
-	let url = "https://api.amtstl.xyz/email/send";
-	var http = new XMLHttpRequest();
-	http.onreadystatechange = function() {
-		if (this.readyState == 4) {
-			alert("Email sent!");
-		}
-	};
-	http.open("GET", formatURL(url, 'kework@micds.org', document.getElementById("subject").value, document.getElementById("html").value), true);
-	http.send();
-}
-// kework@micds.org
+	function sendContact(to, subject, html) {
+		var url = "https://api.amtstl.xyz/email/send";
+		var http = new XMLHttpRequest();
+		http.onreadystatechange = function() {
+			if (this.readyState == 4) {
+				alert("Email sent!");
+			}
+		};
+		http.open("GET", formatURL(url, 'kework@micds.org', document.getElementById("subject").value, document.getElementById("html").value), true);
+		http.send();
+	}
+	// kework@micds.org
 </script>
