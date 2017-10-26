@@ -1,8 +1,11 @@
 <head>
 	<% include ../partials/header %>
+
 	<style>
 		.custom {
 			margin-top: 25px;
+			margin-right: 100px;
+			margin-left: 100px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -10,7 +13,7 @@
 		}
 
 		em {
-			margin: 0px 20px 0px 20px;
+			margin: 0px 20px 100px 20px;
 			letter-spacing: 1px;
 		}
 
@@ -23,16 +26,19 @@
 		}
 	</style>
 </head>
-<div class='flex custom'>
+<div class="flex custom">
 	<h1>About Us</h1>
-	<em>Technoramic is the co-ed high school robotics team from MICDS. We offer robotics after school, for four hours per week. Our team values good sportsmanship, proper self-conduct, honesty, and gracious professionalism.
+	<p>
+		Technoramic is the co-ed high school robotics team from MICDS. We offer robotics after school, for four hours per week. Our team values good sportsmanship, proper self-conduct, honesty, and gracious professionalism.
 
-	Many of our members have prior experience in FTC, while a few came to us this year with little to no experience at all. Regardless of grade and robotics background, our members have developed a passion for the team and have bonded immensely.
+		Many of our members have prior experience in FTC, while a few came to us this year with little to no experience at all. Regardless of grade and robotics background, our members have developed a passion for the team and have bonded immensely.
 
-	We have an inexorable motivation and drive to win!
-	<br><br>
-	Sincerely,
-	Technoramic Robotics Team
+		We have an inexorable motivation and drive to win!
+		<br><br>
+	</p>
+	<em>
+		Sincerely,<br>
+		Technoramic Robotics Team
 	</em>
 	<h1>Team Roster</h1>
 </div>
@@ -92,6 +98,71 @@
 				name: 'Benjamin',
 				bio: 'none',
 				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Allen',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Sofi',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Prithvi',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Hasani',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Kellen',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Cassidy',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Grace',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Lucas',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Sebastian',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Maxim',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Liam',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Celia',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
+			},
+			{
+				name: 'Nick',
+				bio: 'none',
+				imgpath: '/team/na.jpg'
 			}
 		]
 	};
@@ -101,30 +172,30 @@
 	function generateImageLine(i) {
 
 		var container = document.createElement('DIV');
-		var margin = document.createAttribute('style');
-		margin.value = 'margin-right: 25px; margin-bottom: 25px; display: flex; justify-content: center; align-items: center; flex-direction: column; color:white; font-size: 18px; font-family: \'Open Sans\', sans-serif; width: 250px; height: 350px;';
-		container.setAttributeNode(margin);
+	        var margin = document.createAttribute('style');
+	        margin.value = 'margin-right: 25px; margin-bottom: 25px; display: flex; justify-content: center; align-items: center; flex-direction: column; color:white; font-size: 18px; font-family: 'Open Sans', sans-serif; width: 250px; height: 350px;';
+	        container.setAttributeNode(margin);
 
-		// create an image
-		var profile = document.createElement('IMG');
-		var src = document.createAttribute('src');
-		src.value = this.imgConfig.people[i].imgpath;
+	        // create an image
+	        var profile = document.createElement('IMG');
+	        var src = document.createAttribute('src');
+	        src.value = this.imgConfig.people[i].imgpath;
 
-		var height = document.createAttribute('height');
-		height.value = '200px';
+	        var height = document.createAttribute('height');
+	        height.value = '200px';
 
-		var width = document.createAttribute('width');
-		width.value = '160px';
+	        var width = document.createAttribute('width');
+	        width.value = '160px';
 
-		var style = document.createAttribute('style');
-		style.value = 'margin-bottom: 15px;';
+	        var style = document.createAttribute('style');
+	        style.value = 'margin-bottom: 15px;';
 
-		profile.setAttributeNode(height);
-		profile.setAttributeNode(width);
-		profile.setAttributeNode(src);
-		profile.setAttributeNode(style);
-		// end create an image
-		if (this.imgConfig.people[i].bio=='none') {
+	        profile.setAttributeNode(height);
+	        profile.setAttributeNode(width);
+	        profile.setAttributeNode(src);
+	        profile.setAttributeNode(style);
+	        // end create an image
+	        if (this.imgConfig.people[i].bio=='none') {
 			var name = document.createTextNode(this.imgConfig.people[i].name);
 		} else {
 			var name = document.createTextNode(this.imgConfig.people[i].name + ': ' + this.imgConfig.people[i].bio);
@@ -152,3 +223,6 @@
 		document.getElementById('master').appendChild(rowContainer);
 	}
 </script>
+<footer>
+	<% include ../partials/footer.ejs %>
+</footer>

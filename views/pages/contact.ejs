@@ -40,15 +40,18 @@
 		-webkit-transition-duration: 0.4s; /* Safari */
 		transition-duration: 0.4s;
 
-		::-webkit-input-placeholder {
-				color: white;
-		}
-
-		:-moz-placeholder {
-				color: white;
-		}
+		-webkit-transition-duration: 0.4s; /* Safari */
+		transition-duration: 0.4s;
 	}
-	</style>
+
+	::-webkit-input-placeholder {
+		color: white;
+	}
+
+	::-moz-placeholder {
+		color: white;
+	}
+</style>
 </head>
 <div class="flex vertical div">
 	<h1>Contact Us</h1>
@@ -60,6 +63,9 @@
 	<input placeholder="Subject Here" id="subject" />
 	<textarea placeholder="Your message here (html is supported)" id="html"></textarea>
 	<button onclick="sendContact()">Submit</button>
+	<footer style="width: 100%">
+		<% include ../partials/footer.ejs %>
+	</footer>
 </div>
 
 <script>
@@ -68,14 +74,14 @@
 	}
 
 	function sendContact(to, subject, html) {
-		var url = 'https://api.amtstl.xyz/email/send';
+		var url = "https://api.amtstl.xyz/email/send";
 		var http = new XMLHttpRequest();
 		http.onreadystatechange = function() {
 			if (this.readyState == 4) {
-				alert('Email sent!');
+				alert("Email sent!");
 			}
 		};
-		http.open('GET', formatURL(url, 'kework@micds.org', document.getElementById('subject').value, document.getElementById('html').value), true);
+		http.open("GET", formatURL(url, 'kework@micds.org', document.getElementById("subject").value, document.getElementById("html").value), true);
 		http.send();
 	}
 	// kework@micds.org
