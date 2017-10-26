@@ -5,7 +5,7 @@
         h1, h2, h3, p, em, a, li, label {
                 font-size: 24px;
         }
-        
+
         a {
                 font-size: 50px;
         }
@@ -28,20 +28,20 @@
         left: 50%;
         /* bring your own prefixes */
         transform: translate(-50%, -50%);
-        
+
         transition: visibility 0s, opacity 0.5s linear;
 }
 
 button, input {
         background-color: #38393a;
         color: white;
-        
+
         border: 3px solid #38393a;
         border-radius: 5px;
-        
+
         height: 25px;
         width: 75px;
-        
+
         font-size: 15px;
         -webkit-animation: fadein 1s;
 }
@@ -63,10 +63,52 @@ h1, h2, h3, p, em, a, li, label {
 
 body {
 	margin: 0;
-	background: url("/background.png") no-repeat center center fixed; 
+	background: url("/background.png") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 	background-color:rgba(0, 0, 0, 0.7);
+}
+
+div#footer {
+  background: #38393a;
+  width: 100%!important;
+  bottom: 10;
+  left: 0;
+  text-align: center;
+  font-size: 30;
+  color: #ffffff;
+  height: auto;
+  padding: 0 0 10 0;
+}
+ul#footer-links {
+  list-style-type: none;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: auto;
+}
+ul#footer-links ul {
+  list-style-type: none;
+  float: left;
+  align: left;
+  padding-left: 50;
+  padding-right: 20;
+  padding-top: 5;
+  padding-bottom: 5;
+}
+ul#footer-links ul li {
+  font-size: 20;
+}
+ul#footer-links ul li h6 {
+  font-size: 40;
+  margin: 10px;
+}
+div#footer-stuff {
+  align-items: center;
+  width: auto;
+  max-width: 60%;
+  margin: auto
 }
