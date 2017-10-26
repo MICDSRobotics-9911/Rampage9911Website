@@ -172,30 +172,30 @@
 	function generateImageLine(i) {
 
 		var container = document.createElement('DIV');
-	        var margin = document.createAttribute('style');
-	        margin.value = 'margin-right: 25px; margin-bottom: 25px; display: flex; justify-content: center; align-items: center; flex-direction: column; color:white; font-size: 18px; font-family: 'Open Sans', sans-serif; width: 250px; height: 350px;';
-	        container.setAttributeNode(margin);
+		var margin = document.createAttribute('style');
+		margin.value = 'margin-right: 25px; margin-bottom: 25px; display: flex; justify-content: center; align-items: center; flex-direction: column; color:white; font-size: 18px; font-family: 'Open Sans', sans-serif; width: 250px; height: 350px;';
+		container.setAttributeNode(margin);
 
-	        // create an image
-	        var profile = document.createElement('IMG');
-	        var src = document.createAttribute('src');
-	        src.value = this.imgConfig.people[i].imgpath;
+		// create an image
+		var profile = document.createElement('IMG');
+		var src = document.createAttribute('src');
+		src.value = this.imgConfig.people[i].imgpath;
 
-	        var height = document.createAttribute('height');
-	        height.value = '200px';
+		var height = document.createAttribute('height');
+		height.value = '200px';
 
-	        var width = document.createAttribute('width');
-	        width.value = '160px';
+		var width = document.createAttribute('width');
+		width.value = '160px';
 
-	        var style = document.createAttribute('style');
-	        style.value = 'margin-bottom: 15px;';
+		var style = document.createAttribute('style');
+		style.value = 'margin-bottom: 15px;';
 
-	        profile.setAttributeNode(height);
-	        profile.setAttributeNode(width);
-	        profile.setAttributeNode(src);
-	        profile.setAttributeNode(style);
-	        // end create an image
-	        if (this.imgConfig.people[i].bio=='none') {
+		profile.setAttributeNode(height);
+		profile.setAttributeNode(width);
+		profile.setAttributeNode(src);
+		profile.setAttributeNode(style);
+		// end create an image
+		if (this.imgConfig.people[i].bio=='none') {
 			var name = document.createTextNode(this.imgConfig.people[i].name);
 		} else {
 			var name = document.createTextNode(this.imgConfig.people[i].name + ': ' + this.imgConfig.people[i].bio);
@@ -214,7 +214,7 @@
 		rowContainer.setAttributeNode(style);
 
 		for (var i = 0; i < iterations; i++) {
-		//           ^ was 2 originally
+		//		   ^ was 2 originally
 			rowContainer.appendChild(this.generateImageLine(person + i));
 			carry = (person + i);
 		}
