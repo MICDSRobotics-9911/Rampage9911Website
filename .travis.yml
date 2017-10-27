@@ -7,4 +7,4 @@ before_script:
  - npm install -g documentation
  
 script:
- - npm run doc:build
+ - npm run test
