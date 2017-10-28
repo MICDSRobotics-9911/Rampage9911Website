@@ -26,7 +26,7 @@
 		}
 	</style>
 </head>
-<div class="flex custom">
+<div class="flex custom vertical">
 	<h1>About Us</h1>
 	<p>
 		Technoramic is the co-ed high school robotics team from MICDS. We offer robotics after school, for four hours per week. Our team values good sportsmanship, proper self-conduct, honesty, and gracious professionalism.
@@ -173,7 +173,7 @@
 
 		var container = document.createElement('DIV');
 		var margin = document.createAttribute('style');
-		margin.value = 'margin-right: 25px; margin-bottom: 25px; display: flex; justify-content: center; align-items: center; flex-direction: column; color:white; font-size: 18px; font-family: 'Open Sans', sans-serif; width: 250px; height: 350px;';
+		margin.value = "margin-right: 25px; margin-bottom: 25px; display: flex; justify-content: center; align-items: center; flex-direction: column; color:white; font-size: 18px; font-family: 'Open Sans', sans-serif; width: 250px; height: 350px;";
 		container.setAttributeNode(margin);
 
 		// create an image
@@ -210,7 +210,7 @@
 	for (var person = 0; person <= this.imgConfig.people.length; person++) {
 		var rowContainer = document.createElement('DIV');
 		var style = document.createAttribute('style');
-		style.value = 'display: flex; justify-content: center; align-items: center; flex-direction: row';
+		style.value = "display: flex; justify-content: center; align-items: center; flex-direction: row";
 		rowContainer.setAttributeNode(style);
 
 		for (var i = 0; i < iterations; i++) {
