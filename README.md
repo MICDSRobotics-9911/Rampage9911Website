@@ -18,3 +18,5 @@ To auto-run the server on saving, you may want to use nodemon. Run `npm install 
 
 ## Information
 The backend server is written in node.js (`index.js`). The `.ejs` files in the `/views/pages` folder contain the actual pages that are served.
+
+Happy coding!! :computer:
