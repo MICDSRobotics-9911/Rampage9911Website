@@ -1,63 +1,37 @@
 <head>
-<% include ../partials/header %>
+	<% include ../partials/header %>
+	<style>
+		.custom {
+			margin-top: 25px;
+			margin-left: 100px;
+			margin-right: 100px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
 
-<style>
-.custom {
-        margin-top: 25px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-}
+		em {
+			margin: 0px 20px 0px 20px;
+			letter-spacing: 1px;
+		}
 
-em {
-        margin: 0px 20px 0px 20px;
-        letter-spacing: 1px;
-}
+		div {
+			-webkit-animation: fadein 1s;
+		}
 
-div {
-        -webkit-animation: fadein 1s;
-}
-
-h1, p {
-        -webkit-animation: fadein 2s;
-}
-</style>
+		h1, p {
+			-webkit-animation: fadein 2s;
+		}
+	</style>
 </head>
-<div class="flex custom">
-        <h1>Robot Status: <i>Planning Phase</i></h1>
-        <p>Our robot is currently in the planning phase. Most of the team is on the case in order to prepare for the building phases and beyond.
-</br> </br>
-Stay tuned for more exciting details on the progress of the construction of our team robot.
-</p>
+<div class="flex custom vertical">
+	<h1>Robot Status: <i>Planning Phase</i></h1>
+	<p>
+		Our robot is currently in the planning phase. Most of the team is on the case in order to prepare for the building phases and beyond.
+		Stay tuned for more exciting details on the progress of the construction of our team robot.
+	</p>
 </div>
-
-<div class="custom" id="master">
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <footer>
-  <% include ../partials/footer %>
+	<% include ../partials/footer %>
 </footer>
