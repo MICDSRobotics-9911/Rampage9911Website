@@ -1,5 +1,5 @@
 # Technomaric5190Website [![Build Status](https://travis-ci.org/MICDSRobotics/Technomaric5190Website.svg?branch=master)](https://travis-ci.org/MICDSRobotics/Technomaric5190Website)
-This is the official website project for Technoramic
+This is the old website project for Technoramic
 
 ## Prerequisites
 - [node.js](https://nodejs.org/en/)
