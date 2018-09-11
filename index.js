@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 // database
-const MongoClient = require('mongodb').MongoClient;
+//const MongoClient = require('mongodb').MongoClient;
 
 const bodyParser = require('body-parser');
 
@@ -28,7 +28,7 @@ try {
 	throw new Error('Check to see if config file is valid!');
 }
 
-let url;
+/*let url;
 if (config.production) {
 	url = config.mongoURI;
 } else {
@@ -38,6 +38,7 @@ if (config.production) {
 MongoClient.connect(url, () => {
 	console.log('Connected to db');
 });
+*/
 
 // goes outside out db connection
 app.listen(1200, () => {
