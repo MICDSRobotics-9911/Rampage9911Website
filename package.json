@@ -1,13 +1,13 @@
 {
-  "name": "techno-ejs",
+  "name": "disco-ejs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "eslint .",
     "live": "nodemon index.js",
-    "doc:build": "documentation build libs/*.js",
-    "doc:live": "documentation serve libs/*.js"
+    "doc:build": "documentation build *.js",
+    "doc:live": "documentation serve *.js"
   },
   "author": "",
   "license": "MIT",
@@ -18,7 +18,7 @@
     "mongodb": "^2.2.31"
   },
   "devDependencies": {
-    "documentation": "^5.3.3",
+    "documentation": "^5.5.0",
     "eslint": "^4.9.0",
     "nodemon": "^1.12.0"
   }

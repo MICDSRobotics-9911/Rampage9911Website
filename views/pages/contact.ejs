@@ -55,11 +55,11 @@
 </head>
 <div class="flex vertical div">
 	<h1>Contact Us</h1>
-	<p>You probably want to contact either Kendall Work, Megan Currie, Blake Abel, Ehan Kamat, or Amir Shinawi.</p>
+	<p>Inquiries? You want to contact our coach</p>
 	<p class="hidden"></p>
 	<p>MICDS Contact Info: 101 North Warson Rd. St. Louis, MO 63131</p>
 	<p class="hidden"></p>
-	<h1>Email Kendall Work</h1>
+	<h1>Contact Us</h1>
 	<input placeholder="Subject Here" id="subject" />
 	<textarea placeholder="Your message here (html is supported)" id="html"></textarea>
 	<button onclick="sendContact()">Submit</button>
@@ -74,14 +74,14 @@
 	}
 
 	function sendContact(to, subject, html) {
-		var url = "https://api.amtstl.xyz/email/send";
+		var url = "http://api.amtstl.xyz/email/send";
 		var http = new XMLHttpRequest();
 		http.onreadystatechange = function() {
 			if (this.readyState == 4) {
 				alert("Email sent!");
 			}
 		};
-		http.open("GET", formatURL(url, 'kework@micds.org', document.getElementById("subject").value, document.getElementById("html").value), true);
+		http.open("GET", formatURL(url, 'amigala@micds.org', document.getElementById("subject").value, document.getElementById("html").value), true);
 		http.send();
 	}
 	// kework@micds.org
