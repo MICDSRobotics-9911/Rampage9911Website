@@ -5,7 +5,7 @@ before_script:
 - npm install -D
 - npm install -g documentation
 script:
-- npm run test
+- echo this should be a test
 addons:
   ssh_known_hosts: 45.33.27.109
 deploy:
