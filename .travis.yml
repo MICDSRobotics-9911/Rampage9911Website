@@ -11,7 +11,7 @@ addons:
 deploy:
   provider: script
   skip_cleanup: true
-  script: cd /home/app/Discoramic9911Website; git pull;
+  script: cd /home/app/Discoramic9911Website/; git checkout master; git pull;
   on:
     branch: travis
 before_install:
