@@ -10,7 +10,7 @@ addons:
 deploy:
   provider: script
   skip_cleanup: true
-  script: bash ~/updateweb.sh
+  script: ./.travis/deploy.sh
   on:
     all_branches: true
 before_install:
