@@ -1,10 +1,18 @@
 language: node_js
 node_js:
- - "6.11.2"
- 
+ - 6.11.2
 before_script:
- - npm install -D
  - npm install -g documentation
- 
 script:
- - npm run test
+ - npm run doc:build
+addons:
+  ssh_known_hosts: 45.33.27.109
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: bash ./deploy.sh
+  on:
+    all_branches: true
+before_install:
+- openssl aes-256-cbc -K $encrypted_f723d53a0935_key -iv $encrypted_f723d53a0935_iv
+  -in deploy_rsa.enc -out deploy_rsa -d
