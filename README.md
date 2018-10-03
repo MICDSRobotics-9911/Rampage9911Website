@@ -1,5 +1,5 @@
-# Technomaric5190Website [![Build Status](https://travis-ci.org/MICDSRobotics/Technomaric5190Website.svg?branch=master)](https://travis-ci.org/MICDSRobotics/Technomaric5190Website)
-This is the old website project for Technoramic
+# Technomaric5190Website [![Build Status](https://travis-ci.org/MICDSRobotics-9911/Discoramic9911Website.svg?branch=master)](https://travis-ci.org/MICDSRobotics-9911/Discoramic9911Website)
+This is our website project for Rampage9911
 
 ## Prerequisites
 - [node.js](https://nodejs.org/en/)
