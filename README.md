@@ -1,4 +1,4 @@
-# Technomaric5190Website [![Build Status](https://travis-ci.org/MICDSRobotics-9911/Discoramic9911Website.svg?branch=master)](https://travis-ci.org/MICDSRobotics-9911/Discoramic9911Website)
+# Technomaric5190Website [![Build Status](https://travis-ci.org/MICDSRobotics-9911/Rampage9911Website.svg?branch=master)](https://travis-ci.org/MICDSRobotics-9911/Rampage9911Website)
 This is our website project for Rampage9911
 
 ## Prerequisites
