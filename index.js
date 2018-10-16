@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 // database
-//const MongoClient = require('mongodb').MongoClient;
+const sq = require('sqlite3').verbose();
 
 const bodyParser = require('body-parser');
 
@@ -28,17 +28,8 @@ try {
 	throw new Error('Check to see if config file is valid!');
 }
 
-/*let url;
-if (config.production) {
-	url = config.mongoURI;
-} else {
-	url = config.testingURI;
-}
-
-MongoClient.connect(url, () => {
-	console.log('Connected to db');
-});
-*/
+let db = new sq.Database('./userdata.db', sq.OPEN_READWRITE);
+require(__dirname + '/libs/users.js')(app, db);
 
 // goes outside out db connection
 app.listen(1200, () => {

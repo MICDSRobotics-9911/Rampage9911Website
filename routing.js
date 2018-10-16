@@ -45,4 +45,12 @@ module.exports = (app) => {
 	app.get('/first', (req, res) => {
 		res.render('pages/first');
 	});
+
+	app.get('/profile', (req, res) => {
+		res.render('pages/profile')
+	})
+
+	app.get('/newprofile', (req, res) => {
+		res.render('pages/createprofile')
+	})
 };

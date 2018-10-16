@@ -15,7 +15,8 @@
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
-    "mongodb": "^2.2.36"
+    "mongodb": "^2.2.36",
+    "sqlite3": "^4.0.2"
   },
   "devDependencies": {
     "documentation": "^5.5.0",
