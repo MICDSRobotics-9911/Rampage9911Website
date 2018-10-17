@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="utf-8">
+                <% include ../partials/header %>
+                <style media="screen">
+                        button {
+                                margin: 5px 5px 0px 0px;
+                        }
+                        
+                        input {
+                                width: 16em;
+                        }
+                </style>
+        </head>
+        <body>
+                <div class="flex vertical">
+                        <input type="text" id="email" placeholder="Enter email">
+                        <input type="text" id="confirm" placeholder="Confirm email">
+                        <button type="button" name="button" id="submit">Submit</button>
+                </div>
+        </body>
+</html>
+<script type="text/javascript">
+$("#submit").click(function () {
+        if (($("#email").val().toLowerCase() === $("#confirm").val().toLowerCase()) && $("#email").val().search(/@/) > -1) {
+                var data = {email: $("#email").val().toLowerCase()};
+
+                $.ajax({
+                        type: "POST",
+                        url: "/email/submit",
+                        processData: false,
+                        contentType: 'application/json',
+                        data: JSON.stringify(data),
+                        success: function (response) {
+                                if (response.error != false) {
+                                        alert(`Error: ${response.error}`)
+                                }
+                                else {
+                                        location.href = "/";
+                                }
+                        }
+                })
+        }
+        else {
+                alert('Email addresses do not match or are malformed!')
+        }
+})
+</script>
