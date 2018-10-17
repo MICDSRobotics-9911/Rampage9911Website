@@ -46,11 +46,11 @@ module.exports = (app) => {
 		res.render('pages/first');
 	});
 
-	app.get('/profile', (req, res) => {
+	/*app.get('/profile', (req, res) => {
 		res.render('pages/profile')
-	})
+	})*/
 
-	app.get('/newprofile', (req, res) => {
-		res.render('pages/createprofile')
+	app.get('/maillist', (req, res) => {
+		res.render('pages/maillist')
 	})
 };

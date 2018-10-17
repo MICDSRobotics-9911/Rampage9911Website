@@ -1,9 +1,8 @@
 const express = require('express');
 const app = express();
 
-// database
+// universal constants
 const sq = require('sqlite3').verbose();
-
 const bodyParser = require('body-parser');
 
 app.set('view engine', 'ejs');
@@ -18,8 +17,12 @@ app.use((req, res, next) => {
 	next();
 });
 
-// 'front-end' routing
+// front-end routing
 require(__dirname + '/routing.js')(app);
+
+// back-end registration
+let db = new sq.Database('./userdata.db', sq.OPEN_READWRITE);
+require(__dirname + '/libs/users.js')(app, db);
 
 let config;
 try {
@@ -27,9 +30,6 @@ try {
 } catch (err) {
 	throw new Error('Check to see if config file is valid!');
 }
-
-let db = new sq.Database('./userdata.db', sq.OPEN_READWRITE);
-require(__dirname + '/libs/users.js')(app, db);
 
 // goes outside out db connection
 app.listen(1200, () => {
