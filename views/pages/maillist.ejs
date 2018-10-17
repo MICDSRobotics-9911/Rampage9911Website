@@ -22,23 +22,13 @@
         </body>
 </html>
 <script type="text/javascript">
-var url = "";
-var prod = false;
-
-if (prod) {
-        url = "https://rampage.amtstl.xyz";
-}
-else {
-        url = "http://localhost:1200";
-}
-
 $("#submit").click(function () {
         if (($("#email").val().toLowerCase() === $("#confirm").val().toLowerCase()) && $("#email").val().search(/@/) > -1) {
                 var data = {email: $("#email").val().toLowerCase()};
 
                 $.ajax({
                         type: "POST",
-                        url: "http://localhost:1200/email/submit",
+                        url: "/email/submit",
                         processData: false,
                         contentType: 'application/json',
                         data: JSON.stringify(data),
@@ -47,7 +37,7 @@ $("#submit").click(function () {
                                         alert(`Error: ${response.error}`)
                                 }
                                 else {
-                                        location.href = "http://localhost:1200";
+                                        location.href = "/";
                                 }
                         }
                 })
