@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 require(__dirname + '/routing.js')(app);
 
 // back-end registration
-let db = new sq.Database('./userdata.db', sq.OPEN_READWRITE);
+const db = new sq.Database('./userdata.db', sq.OPEN_READWRITE);
 require(__dirname + '/libs/users.js')(app, db);
 
 let config;
